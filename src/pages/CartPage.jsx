@@ -41,6 +41,30 @@ const products = [
     imageAlt:
       "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
   },
+  {
+    id: 3,
+    name: "The Hangover Satchel",
+    href: "#",
+    color: "Natural Bullnut ",
+    price: "$99.00",
+    quantity: 1,
+    imageSrc:
+    "https://i.ebayimg.com/images/g/0FAAAOSwP~leE7~~/s-l500.jpg",
+    imageAlt:
+      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
+  },
+  {
+    id: 3,
+    name: "The Hangover Satchel",
+    href: "#",
+    color: "Natural Bullnut ",
+    price: "$99.00",
+    quantity: 1,
+    imageSrc:
+    "https://i.ebayimg.com/images/g/0FAAAOSwP~leE7~~/s-l500.jpg",
+    imageAlt:
+      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
+  },
   // More products...
 ];
 

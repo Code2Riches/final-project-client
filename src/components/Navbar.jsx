@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import CartPage from "../pages/CartPage"
+import CartPage from "../pages/CartPage";
 
 import {
   XMarkIcon,
@@ -8,12 +8,12 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 
-
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
+  const showSidebar = () => setOpen(!open);
   return (
     <div className='w-screen h-[80px] z-10 bg-zinc-200  fixed drop-shadow-lg'>
       <div className=' px-2 flex justify-between items-center w-full h-full'>
@@ -35,7 +35,7 @@ const Navbar = () => {
             }}
           >
             <button className=' rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3'>
-              <ShoppingCartIcon className='w-6 ' />
+              <ShoppingCartIcon className='w-5 ' />
             </button>
           </div>
           <button className='border-none bg-transparent text-black mr-4'>
@@ -74,7 +74,7 @@ const Navbar = () => {
             }}
           >
             <button className=' rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3'>
-              <ShoppingCartIcon className='w-6 ' />
+              <ShoppingCartIcon className='w-5 ' />
             </button>
           </div>
           <button className='bg-transparent text-indigo-600 px-8 py-3 mb-4'>

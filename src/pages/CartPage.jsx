@@ -45,7 +45,7 @@ const products = [
 ];
 
 export default function CartPage() {
-  const [open, setOpen] = useState(true);
+const [open, setOpen] = useState(true);
 
   return (
     <Transition.Root show={open} as={Fragment}>

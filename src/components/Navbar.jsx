@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import CartPage from "../pages/CartPage"
 
 import {
   XMarkIcon,
   Cog8ToothIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
+
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);

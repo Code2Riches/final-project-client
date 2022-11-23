@@ -9,8 +9,8 @@ const GlobalLayouts = (props) => {
   return (
     <div>
       <Navbar sideBar={sideBar} setSideBar={setSideBar} />
-      <Outlet />
       <CartPage sideBar={sideBar} setSideBar={setSideBar} />
+      <Outlet />
       <Footer />
     </div>
   );

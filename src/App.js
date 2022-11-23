@@ -3,12 +3,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GlobalLayouts from "./layouts/GlobalLayouts";
 import LandingPage from "./pages/LandingPage";
-import ContactPage from "./pages/ContactPage";
 import PricingPage from "./pages/PricingPage";
 import PlatformsPage from "./pages/PlatformsPage";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
+import Support from "./pages/ContactPage";
 
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
@@ -33,7 +33,7 @@ const App = () => {
         },
         {
           path: "/support",
-          element: <ContactPage />,
+          element: <Support />,
         },
         {
           path: "/platforms",

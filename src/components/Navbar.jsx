@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
   XMarkIcon,
@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 const Navbar = (props) => {
+  const navigate = useNavigate();
   const { sideBar, setSideBar } = props;
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
@@ -43,7 +44,12 @@ const Navbar = (props) => {
               <ShoppingCartIcon className='w-5 ' />
             </button>
           </div>
-          <button className='border-none bg-transparent text-black mr-4'>
+          <button
+            className='border-none bg-transparent text-black mr-4'
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
             Sign in
           </button>
           <button className='px-8 py-3'>Sign Up</button>
@@ -89,9 +95,7 @@ const Navbar = (props) => {
               <ShoppingCartIcon className='w-5 ' />
             </button>
           </div>
-          <button className='bg-transparent text-indigo-600 px-8 py-3 mb-4'>
-            Sign in
-          </button>
+          <button className='bg-transparent text-indigo-600 px-8 py-3 mb-4'></button>
           <button className='px-8 py-3'>Sign Up</button>
         </div>
       </ul>

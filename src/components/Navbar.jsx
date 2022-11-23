@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import CartPage from "./CartPage";
 
 import {
   XMarkIcon,
@@ -14,16 +13,23 @@ const Navbar = (props) => {
   const handleClick = () => setNav(!nav);
   const showSidebar = () => setSideBar(!sideBar);
   return (
-    <div className='w-screen h-[80px] z-10 bg-zinc-200  fixed drop-shadow-lg'>
+    <div className='w-screen h-[80px] z-10 bg-zinc-200 top-0  fixed drop-shadow-lg'>
       <div className=' px-2 flex justify-between items-center w-full h-full'>
         <div className='flex items-center'>
           <h1 className=' text-3xl font-bold mr-4 sm:text-4xl'>N3XTzION.</h1>
           <ul className='hidden md:flex'>
-            <li className=''>Home</li>
-            <li className=''>About</li>
-            <li className=''>Support</li>
-            <li className=''>Platforms</li>
-            <li className=''> Pricing</li>
+            <li className='hover:text-indigo-600'>
+              <Link to='/home'>Home</Link>
+            </li>
+            <li className='hover:text-indigo-600'>
+              <Link to='/about'>About</Link>
+            </li>
+            <li className='hover:text-indigo-600'>
+              <Link to='/support'>Support</Link>
+            </li>
+            <li className='hover:text-indigo-600'>
+              <Link to='/platforms'>Platforms</Link>
+            </li>
           </ul>
         </div>
         <div className=' hidden md:flex pr-4'>
@@ -43,7 +49,7 @@ const Navbar = (props) => {
           <button className='px-8 py-3'>Sign Up</button>
         </div>
         <div
-          className='md:hidden'
+          className=' pr-4 md:hidden'
           onClick={() => {
             handleClick();
           }}
@@ -60,11 +66,18 @@ const Navbar = (props) => {
           !nav ? "hidden" : "absolute bg-zinc-200 w-full px-8 md:hidden"
         }
       >
-        <li className='border-b-2 border-zinc-300 w-full'>Home</li>
-        <li className='border-b-2 border-zinc-300 w-full'>About</li>
-        <li className='border-b-2 border-zinc-300 w-full'>Support</li>
-        <li className='border-b-2 border-zinc-300 w-full'>Platforms</li>
-        <li className='border-b-2 border-zinc-300 w-full'>Pricing</li>
+        <li className='hover:text-indigo-600'>
+          <Link to='/home'>Home</Link>
+        </li>
+        <li className='hover:text-indigo-600'>
+          <Link to='/about'>About</Link>
+        </li>
+        <li className='hover:text-indigo-600'>
+          <Link to='/support'>Support</Link>
+        </li>
+        <li className='hover:text-indigo-600'>
+          <Link to='/platforms'>Platforms</Link>
+        </li>
         <div className='flex flex-col my-4'>
           <div
             className=''

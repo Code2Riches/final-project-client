@@ -8,12 +8,11 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
+const Navbar = (props) => {
+  const { sideBar, setSideBar } = props;
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
-  const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setOpen(!open);
+  const showSidebar = () => setSideBar(!sideBar);
   return (
     <div className='w-screen h-[80px] z-10 bg-zinc-200  fixed drop-shadow-lg'>
       <div className=' px-2 flex justify-between items-center w-full h-full'>

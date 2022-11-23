@@ -1,15 +1,16 @@
 import React from "react";
-import { NavBar } from '../Components/NavBar';
-import { Footer } from '../Components/Footer';
-import { Outlet } from 'react-router-dom';
-import { CartPage } from '../Components/CartPage';
+import { NavBar } from "../components/NavBar";
+import { Footer } from "../components/Footer";
+import { Outlet } from "react-router-dom";
+import { CartPage } from "../components/CartPage";
 
-const GlobalLayouts = () => {
+const GlobalLayouts = (props) => {
+  const { sideBar, setSideBar } = props;
   return (
     <div>
-      <NavBar />
+      <NavBar sideBar={sideBar} setSideBar={setSideBar} />
       <Outlet />
-      <CartPage />
+      <CartPage sideBar={sideBar} setSideBar={setSideBar} />
       <Footer />
     </div>
   );

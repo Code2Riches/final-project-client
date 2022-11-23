@@ -1,25 +1,24 @@
-import { Navbar } from '../components/Navbar';
-
 const urlEndpoint = process.env.REACT_APP_URL_ENDPOINT;
 
-export const lander = () => {
-
-  const panels = document.querySelectorAll('.panel');
+const LandingPage = () => {
+  const panels = document.querySelectorAll(".panel");
 
   function toggleOpen() {
-    console.log('Hello');
-    this.classList.toggle('open');
+    console.log("Hello");
+    this.classList.toggle("open");
   }
 
   function toggleActive(e) {
     console.log(e.propertyName);
-    if (e.propertyName.includes('flex')) {
-      this.classList.toggle('open-active');
+    if (e.propertyName.includes("flex")) {
+      this.classList.toggle("open-active");
     }
   }
 
-  panels.forEach(panel => panel.addEventListener('click', toggleOpen));
-  panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+  panels.forEach((panel) => panel.addEventListener("click", toggleOpen));
+  panels.forEach((panel) =>
+    panel.addEventListener("transitionend", toggleActive)
+  );
 
   return (
     <div>
@@ -109,27 +108,25 @@ export const lander = () => {
           .panel p {
             font-size: 1em;
           }
-        }`
-      }
+        }`}
       </style>
-      <Navbar />
-      <div class="panels">
-        <div class="panel panel1">
+      <div class='panels'>
+        <div class='panel panel1'>
           <p>Hey</p>
           <p>Buy</p>
           <p>Dance</p>
         </div>
-        <div class="panel panel2">
+        <div class='panel panel2'>
           <p>Give</p>
           <p>Sell</p>
           <p>Receive</p>
         </div>
-        <div class="panel panel3">
+        <div class='panel panel3'>
           <p>Experience</p>
           <p>Trade</p>
           <p>Today</p>
         </div>
-        <div class="panel panel4">
+        <div class='panel panel4'>
           <p>Experience</p>
           <p>Create</p>
           <p>Today</p>
@@ -137,4 +134,5 @@ export const lander = () => {
       </div>
     </div>
   );
-}
+};
+export default LandingPage;

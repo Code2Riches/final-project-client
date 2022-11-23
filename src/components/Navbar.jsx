@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import CartPage from "../pages/CartPage";
+import CartPage from "./CartPage";
 
 import {
   XMarkIcon,

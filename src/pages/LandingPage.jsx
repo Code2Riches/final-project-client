@@ -110,23 +110,23 @@ const LandingPage = () => {
           }
         }`}
       </style>
-      <div class='panels'>
-        <div class='panel panel1'>
+      <div className='panels'>
+        <div className='panel panel1'>
           <p>Hey</p>
           <p>Buy</p>
           <p>Dance</p>
         </div>
-        <div class='panel panel2'>
+        <div className='panel panel2'>
           <p>Give</p>
           <p>Sell</p>
           <p>Receive</p>
         </div>
-        <div class='panel panel3'>
+        <div className='panel panel3'>
           <p>Experience</p>
           <p>Trade</p>
           <p>Today</p>
         </div>
-        <div class='panel panel4'>
+        <div className='panel panel4'>
           <p>Experience</p>
           <p>Create</p>
           <p>Today</p>

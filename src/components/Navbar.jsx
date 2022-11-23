@@ -34,7 +34,7 @@ const Navbar = (props) => {
             }}
           >
             <button className=' rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3'>
-              <ShoppingCartIcon className='w-5 ' />
+              <ShoppingCartIcon className='w-8 ' />
             </button>
           </div>
           <button className='border-none bg-transparent text-black mr-4'>
@@ -49,9 +49,9 @@ const Navbar = (props) => {
           }}
         >
           {!nav ? (
-            <Cog8ToothIcon className='w-5' />
+            <Cog8ToothIcon className='w-6 mr-6' />
           ) : (
-            <XMarkIcon className='w-5' />
+            <XMarkIcon className='w-6 mr-6' />
           )}
         </div>
       </div>
@@ -73,10 +73,10 @@ const Navbar = (props) => {
             }}
           >
             <button className=' rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3'>
-              <ShoppingCartIcon className='w-5 ' />
+              <ShoppingCartIcon className='w-6 ' />
             </button>
           </div>
-          <button className='bg-transparent text-indigo-600 px-8 py-3 mb-4'>
+          <button className='bg-transparent text-indigo-600 px-8 py-3 mb-2 mt-2'>
             Sign in
           </button>
           <button className='px-8 py-3'>Sign Up</button>

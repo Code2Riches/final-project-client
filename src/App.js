@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useState, useEffect, Children } from "react";
+import { useState, useEffect } from "react";
 import GlobalLayouts from "./layouts/GlobalLayouts";
 import LandingPage from "./pages/LandingPage";
 import ContactPage from "./pages/ContactPage";
@@ -13,10 +13,11 @@ import Login from "./pages/Login";
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
 const App = () => {
+  const [sideBar, setSideBar] = useState(true);
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <GlobalLayouts />,
+      element: <GlobalLayouts sideBar={sideBar} setSideBar={setSideBar} />,
       children: [
         {
           element: <LandingPage urlEndPoint={urlEndPoint} />,

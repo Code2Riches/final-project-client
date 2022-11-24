@@ -61,9 +61,9 @@ const Navbar = (props) => {
           }}
         >
           {!nav ? (
-            <Cog8ToothIcon className='w-5' />
+            <Cog8ToothIcon className='w-6 mr-6' />
           ) : (
-            <XMarkIcon className='w-5' />
+            <XMarkIcon className='w-6 mr-6' />
           )}
         </div>
       </div>
@@ -123,9 +123,11 @@ const Navbar = (props) => {
               <ShoppingCartIcon className='w-6 ' />
             </button>
           </div>
+
           <button className='bg-transparent text-indigo-600 px-8 py-3 my-2'>
             Sign In
           </button>
+
           <button className='px-8 py-3'>Sign Up</button>
         </div>
       </ul>

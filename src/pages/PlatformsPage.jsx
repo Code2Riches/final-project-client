@@ -1,5 +1,6 @@
 import React from "react";
-import { CheckIcon } from "@heroicons/react/24/solid";
+import msoda from "../assets/mutant-soda.png";
+import soda from "../assets/soda.png";
 
 const PlatformsPage = () => {
   return (
@@ -11,105 +12,175 @@ const PlatformsPage = () => {
           accusantium iure ab vitae itaque nihil sed! Eum, optio fuga.
         </p>
 
-        <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4'>
-
-          <div className='flex'>
+        <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-4 ml-16 mr-4'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
             <div>
-              <CheckIcon className='w-7 mr-4 text-green-600' />
+              <img
+                src={msoda}
+                alt='/'
+                className=' rounded-xl w-[285px] display-block'
+              />
             </div>
-            <div>
-              <h3 className='font-bold text-lg'>Notifications</h3>
-              <p className='text-lg pt-2 pb-4 '>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                consectetur quo porro sunt, odit necessitatibus.
+            <div className=''>
+              <h3 className='font-bold text-lg'>Mutant Soda</h3>
+              <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
+                420$ <p>#315</p>
               </p>
-            </div>   
-          </div>
-          <div className='flex'>
-            <div>
-              <CheckIcon className='w-7 mr-4 text-green-600' />
+              <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
+                Last sale: 350${" "}
+                <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
+                  Details
+                </button>
+              </p>
             </div>
-            <div>
-              <h3 className='font-bold text-lg'>Notifications</h3>
-              <p className='text-lg pt-2 pb-4 '>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                consectetur quo porro sunt, odit necessitatibus.
-              </p>
-            </div>   
           </div>
-          <div className='flex'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
             <div>
-              <CheckIcon className='w-7 mr-4 text-green-600' />
+              <img
+                src={soda}
+                alt='/'
+                className=' rounded-xl w-[285px] display-block'
+              />
             </div>
-            <div>
-              <h3 className='font-bold text-lg'>Notifications</h3>
-              <p className='text-lg pt-2 pb-4 '>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                consectetur quo porro sunt, odit necessitatibus.
+            <div className=''>
+              <h3 className='font-bold text-lg'>Mutant Soda</h3>
+              <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
+                420$ <p>#315</p>
               </p>
-            </div>   
-          </div>
-          <div className='flex'>
-            <div>
-              <CheckIcon className='w-7 mr-4 text-green-600' />
+              <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
+                Last sale: 350${" "}
+                <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
+                  Details
+                </button>
+              </p>
             </div>
-            <div>
-              <h3 className='font-bold text-lg'>Notifications</h3>
-              <p className='text-lg pt-2 pb-4 '>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                consectetur quo porro sunt, odit necessitatibus.
-              </p>
-            </div>   
           </div>
-          <div className='flex'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
             <div>
-              <CheckIcon className='w-7 mr-4 text-green-600' />
+              <img
+                src={msoda}
+                alt='/'
+                className=' rounded-xl w-[285px] display-block'
+              />
             </div>
-            <div>
-              <h3 className='font-bold text-lg'>Notifications</h3>
-              <p className='text-lg pt-2 pb-4 '>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                consectetur quo porro sunt, odit necessitatibus.
+            <div className=''>
+              <h3 className='font-bold text-lg'>Mutant Soda</h3>
+              <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
+                420$ <p>#315</p>
               </p>
-            </div>   
-          </div>
-          <div className='flex'>
-            <div>
-              <CheckIcon className='w-7 mr-4 text-green-600' />
+              <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
+                Last sale: 350${" "}
+                <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
+                  Details
+                </button>
+              </p>
             </div>
-            <div>
-              <h3 className='font-bold text-lg'>Notifications</h3>
-              <p className='text-lg pt-2 pb-4 '>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                consectetur quo porro sunt, odit necessitatibus.
-              </p>
-            </div>   
           </div>
-          <div className='flex'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
             <div>
-              <CheckIcon className='w-7 mr-4 text-green-600' />
+              <img
+                src={soda}
+                alt='/'
+                className=' rounded-xl w-[285px] display-block'
+              />
             </div>
-            <div>
-              <h3 className='font-bold text-lg'>Notifications</h3>
-              <p className='text-lg pt-2 pb-4 '>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                consectetur quo porro sunt, odit necessitatibus.
+            <div className=''>
+              <h3 className='font-bold text-lg'>Mutant Soda</h3>
+              <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
+                420$ <p>#315</p>
               </p>
-            </div>   
-          </div>
-          <div className='flex'>
-            <div>
-              <CheckIcon className='w-7 mr-4 text-green-600' />
+              <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
+                Last sale: 350${" "}
+                <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
+                  Details
+                </button>
+              </p>
             </div>
-            <div>
-              <h3 className='font-bold text-lg'>Notifications</h3>
-              <p className='text-lg pt-2 pb-4 '>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                consectetur quo porro sunt, odit necessitatibus.
-              </p>
-            </div>   
           </div>
-
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+            <div>
+              <img
+                src={msoda}
+                alt='/'
+                className=' rounded-xl w-[285px] display-block'
+              />
+            </div>
+            <div className=''>
+              <h3 className='font-bold text-lg'>Mutant Soda</h3>
+              <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
+                420$ <p>#315</p>
+              </p>
+              <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
+                Last sale: 350${" "}
+                <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
+                  Details
+                </button>
+              </p>
+            </div>
+          </div>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+            <div>
+              <img
+                src={soda}
+                alt='/'
+                className=' rounded-xl w-[285px] display-block'
+              />
+            </div>
+            <div className=''>
+              <h3 className='font-bold text-lg'>Mutant Soda</h3>
+              <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
+                420$ <p>#315</p>
+              </p>
+              <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
+                Last sale: 350${" "}
+                <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
+                  Details
+                </button>
+              </p>
+            </div>
+          </div>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+            <div>
+              <img
+                src={msoda}
+                alt='/'
+                className=' rounded-xl w-[285px] display-block'
+              />
+            </div>
+            <div className=''>
+              <h3 className='font-bold text-lg'>Mutant Soda</h3>
+              <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
+                420$ <p>#315</p>
+              </p>
+              <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
+                Last sale: 350${" "}
+                <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
+                  Details
+                </button>
+              </p>
+            </div>
+          </div>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+            <div>
+              <img
+                src={soda}
+                alt='/'
+                className=' rounded-xl w-[285px] display-block'
+              />
+            </div>
+            <div className=''>
+              <h3 className='font-bold text-lg'>Mutant Soda</h3>
+              <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
+                420$ <p>#315</p>
+              </p>
+              <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
+                Last sale: 350${" "}
+                <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
+                  Details
+                </button>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

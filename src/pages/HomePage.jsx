@@ -22,7 +22,7 @@ function HomePage() {
         <div>
           <img className=' w-full rounded-3xl shadow-xl' src={soda} alt='/' />
         </div>
-        <div className='absolute flex flex-col py-8 md:min-w-[560px] bottom-[5%] mx-1 md:left-1/4 transform md:translate-x-1/4 bg-zinc-200 border border-slate-300 rounded-xl text-center shadow-xl'>
+        <div className='absolute flex flex-col py-8 md:min-w-[560px] bottom-[5%] mx-1 md:left-1/3 transform md:translate-x-1/4 bg-zinc-200 border border-slate-300 rounded-xl text-center shadow-xl'>
           <p className=''> Data Services</p>
           <div className='flex justify-between flex-wrap px-4'>
             <p className='flex px-4 py-2 text-slate-500'>

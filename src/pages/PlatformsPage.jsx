@@ -12,8 +12,8 @@ const PlatformsPage = () => {
           accusantium iure ab vitae itaque nihil sed! Eum, optio fuga.
         </p>
 
-        <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-4 ml-16 mr-4'>
-          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+        <div className='flex flex-wrap pt-4 mx-auto gap-4 pl-12'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] '>
             <div>
               <img
                 src={msoda}
@@ -24,17 +24,17 @@ const PlatformsPage = () => {
             <div className=''>
               <h3 className='font-bold text-lg'>Mutant Soda</h3>
               <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
-                420$ <p>#315</p>
+                420$ <span>#315</span>
               </p>
-              <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
-                Last sale: 350${" "}
+              <p className='text-lg pt-2 pb-4 px-2 text-center text-slate-400 flex justify-between'>
+                Last sale: 350$
                 <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
                   Details
                 </button>
               </p>
             </div>
           </div>
-          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px]'>
             <div>
               <img
                 src={soda}
@@ -45,17 +45,17 @@ const PlatformsPage = () => {
             <div className=''>
               <h3 className='font-bold text-lg'>Mutant Soda</h3>
               <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
-                420$ <p>#315</p>
+                420$ <span>#315</span>
               </p>
               <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
-                Last sale: 350${" "}
+                Last sale: 350$
                 <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
                   Details
                 </button>
               </p>
             </div>
           </div>
-          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px]'>
             <div>
               <img
                 src={msoda}
@@ -66,17 +66,17 @@ const PlatformsPage = () => {
             <div className=''>
               <h3 className='font-bold text-lg'>Mutant Soda</h3>
               <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
-                420$ <p>#315</p>
+                420$ <span>#315</span>
               </p>
               <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
-                Last sale: 350${" "}
+                Last sale: 350$
                 <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
                   Details
                 </button>
               </p>
             </div>
           </div>
-          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px]'>
             <div>
               <img
                 src={soda}
@@ -87,17 +87,17 @@ const PlatformsPage = () => {
             <div className=''>
               <h3 className='font-bold text-lg'>Mutant Soda</h3>
               <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
-                420$ <p>#315</p>
+                420$ <span>#315</span>
               </p>
               <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
-                Last sale: 350${" "}
+                Last sale: 350$
                 <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
                   Details
                 </button>
               </p>
             </div>
           </div>
-          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px]'>
             <div>
               <img
                 src={msoda}
@@ -108,17 +108,17 @@ const PlatformsPage = () => {
             <div className=''>
               <h3 className='font-bold text-lg'>Mutant Soda</h3>
               <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
-                420$ <p>#315</p>
+                420$ <span>#315</span>
               </p>
               <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
-                Last sale: 350${" "}
+                Last sale: 350$
                 <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
                   Details
                 </button>
               </p>
             </div>
           </div>
-          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px]'>
             <div>
               <img
                 src={soda}
@@ -129,17 +129,17 @@ const PlatformsPage = () => {
             <div className=''>
               <h3 className='font-bold text-lg'>Mutant Soda</h3>
               <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
-                420$ <p>#315</p>
+                420$ <span>#315</span>
               </p>
               <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
-                Last sale: 350${" "}
+                Last sale: 350$
                 <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
                   Details
                 </button>
               </p>
             </div>
           </div>
-          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px]'>
             <div>
               <img
                 src={msoda}
@@ -150,17 +150,17 @@ const PlatformsPage = () => {
             <div className=''>
               <h3 className='font-bold text-lg'>Mutant Soda</h3>
               <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
-                420$ <p>#315</p>
+                420$ <span>#315</span>
               </p>
               <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
-                Last sale: 350${" "}
+                Last sale: 350$
                 <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
                   Details
                 </button>
               </p>
             </div>
           </div>
-          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px] my-4'>
+          <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-slate-700 text-white w-[285px]'>
             <div>
               <img
                 src={soda}
@@ -171,10 +171,10 @@ const PlatformsPage = () => {
             <div className=''>
               <h3 className='font-bold text-lg'>Mutant Soda</h3>
               <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
-                420$ <p>#315</p>
+                420$ <span>#315</span>
               </p>
               <p className='text-lg pt-2 pb-4 px-2 text-left text-slate-400 flex justify-between'>
-                Last sale: 350${" "}
+                Last sale: 350$
                 <button className=' px-2 bg-transparent hover:bg-indigo-500 hover:text-white'>
                   Details
                 </button>

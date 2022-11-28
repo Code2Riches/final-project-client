@@ -2,11 +2,11 @@ import React from "react";
 
 function AboutPage() {
   return (
-    <div name='about' className='w-full my-32'>
-      <div className='max-w-[1240px] mx-auto'>
-        <div className=' text-center'>
-          <h2 className=' text-5xl font-bold'>About us</h2>
-          <p className='text-3xl py-6 text-gray-500'>
+    <div name='about' className='w-full my- pt-24 dark:bg-zinc-800'>
+      <div className='max-w-[1240px] mx-auto dark:bg-zinc-800'>
+        <div className=' text-center dark:bg-zinc-800'>
+          <h2 className=' text-5xl font-bold dark:text-gray-300'>About us</h2>
+          <p className='text-3xl py-6 text-gray-500 dark:text-gray-400'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eum
             expedita laudantium culpa dolor illum eligendi deleniti accusantium?
           </p>

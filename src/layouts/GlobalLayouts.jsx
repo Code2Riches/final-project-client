@@ -5,10 +5,16 @@ import CartPage from "../components/CartPage";
 import { Outlet } from "react-router-dom";
 
 const GlobalLayouts = (props) => {
-  const { sideBar, setSideBar } = props;
+  const { sideBar, setSideBar, handleThemeSwitch, theme, setTheme } = props;
   return (
-    <div>
-      <Navbar sideBar={sideBar} setSideBar={setSideBar} />
+    <div className='dark:bg-zinc-600'>
+      <Navbar
+        sideBar={sideBar}
+        setSideBar={setSideBar}
+        handleThemeSwitch={handleThemeSwitch}
+        theme={theme}
+        setTheme={setTheme}
+      />
       <CartPage sideBar={sideBar} setSideBar={setSideBar} />
       <Outlet />
       <Footer />

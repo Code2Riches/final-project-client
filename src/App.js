@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GlobalLayouts from "./layouts/GlobalLayouts";
@@ -13,11 +12,23 @@ import Support from "./pages/ContactPage";
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
 const App = () => {
+  const [theme, setTheme] = useState("light");
   const [sideBar, setSideBar] = useState(false);
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <GlobalLayouts sideBar={sideBar} setSideBar={setSideBar} />,
+      element: (
+        <GlobalLayouts
+          sideBar={sideBar}
+          setSideBar={setSideBar}
+          handleThemeSwitch={handleThemeSwitch}
+          theme={theme}
+          setTheme={setTheme}
+        />
+      ),
       children: [
         {
           element: <LandingPage urlEndPoint={urlEndPoint} />,
@@ -50,6 +61,14 @@ const App = () => {
       ],
     },
   ]);
+  useEffect(() => {
+    if (theme === "dark") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [theme]);
+
   return (
     <>
       <RouterProvider router={router} />

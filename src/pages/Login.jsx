@@ -1,9 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import loginImg from "../assets/login.jpg";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 
 export default function Login() {
+  const [signUp, setSignUp] = useState(false);
   return (
     <div className='relative w-full h-screen bg-zinc-900/90'>
       <img
@@ -37,14 +39,26 @@ export default function Login() {
               type='password'
             />
           </div>
-          <button className='w-full py-3 mt-8 bg-indigo-600 hover:bg-transparent dark:hover:text-zinc-300 relative text-white rounded-lg'>
-            Sign In
-          </button>
+          {signUp ? (
+            <button className='w-full py-3 mt-8 bg-indigo-600 hover:bg-transparent dark:hover:text-zinc-300 relative text-white rounded-lg'>
+              Sign up
+            </button>
+          ) : (
+            <button className='w-full py-3 mt-8 bg-indigo-600 hover:bg-transparent dark:hover:text-zinc-300 relative text-white rounded-lg'>
+              Sign In
+            </button>
+          )}
+
           <p className='flex items-center relative mt-2 dark:text-zinc-300'>
             <input className='mr-2' type='checkbox' />
             Remember Me
           </p>
-          <p className='text-center mt-8 relative dark:text-zinc-300'>Not a member? Sign up now</p>
+          <p
+            className='text-center mt-8 relative dark:text-zinc-300 hover:text-indigo-400 dark:hover:text-indigo-400 cursor-pointer'
+            onClick={() => setSignUp(!signUp)}
+          >
+            {signUp ? "Already a member? Sign in" : "Not a member? Sign up"}
+          </p>
         </div>
       </div>
     </div>

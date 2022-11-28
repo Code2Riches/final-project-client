@@ -36,7 +36,8 @@ const Navbar = (props) => {
         </div>
         <div className=' hidden md:flex pr-4'>
           <div className='flex gap-5'>
-            <div className=' pt-4'>
+            <div className=' pt-4 flex'>
+              <p className="dark:text-zinc-300 text-black pr-2">Light/Dark</p>
               <ToggleButton handleThemeSwitch={handleThemeSwitch} />
             </div>
             <button

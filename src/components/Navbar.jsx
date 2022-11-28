@@ -41,7 +41,7 @@ const Navbar = (props) => {
             }}
           >
             <button className=' rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3'>
-              <ShoppingCartIcon className='w-8 ' />
+              <ShoppingCartIcon className='w-7' />
             </button>
           </div>
           <button
@@ -73,16 +73,44 @@ const Navbar = (props) => {
         }
       >
         <li className='hover:text-indigo-600'>
-          <Link to='/home'>Home</Link>
+          <Link
+            to='/home'
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            Home
+          </Link>
         </li>
         <li className='hover:text-indigo-600'>
-          <Link to='/about'>About</Link>
+          <Link
+            to='/about'
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            About
+          </Link>
         </li>
         <li className='hover:text-indigo-600'>
-          <Link to='/support'>Support</Link>
+          <Link
+            to='/support'
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            Support
+          </Link>
         </li>
         <li className='hover:text-indigo-600'>
-          <Link to='/platforms'>Platforms</Link>
+          <Link
+            to='/platforms'
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            Platforms
+          </Link>
         </li>
         <div className='flex flex-col my-4'>
           <div
@@ -95,8 +123,9 @@ const Navbar = (props) => {
               <ShoppingCartIcon className='w-6 ' />
             </button>
           </div>
-          <button className='bg-transparent text-indigo-600 px-8 py-3 mb-2 mt-2'>
-            Sign in
+
+          <button className='bg-transparent text-indigo-600 px-8 py-3 my-2'>
+            Sign In
           </button>
 
           <button className='px-8 py-3'>Sign Up</button>

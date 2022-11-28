@@ -13,7 +13,7 @@ import Support from "./pages/ContactPage";
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
 const App = () => {
-  const [sideBar, setSideBar] = useState(true);
+  const [sideBar, setSideBar] = useState(false);
   const router = createBrowserRouter([
     {
       path: "/",

@@ -18,7 +18,7 @@ const Navbar = (props) => {
     <div className='w-screen h-[80px] z-10 bg-zinc-200 dark:bg-zinc-600 top-0  fixed drop-shadow-lg'>
       <div className=' px-2 flex justify-between items-center w-full h-full'>
         <div className='flex items-center'>
-          <h1 className=' text-3xl font-bold mr-4 sm:text-4xl'>N3XTzION.</h1>
+          <h1 className=' text-3xl font-bold mr-4 sm:text-4xl dark:text-white'>N3XTzION.</h1>
           <ul className='hidden md:flex'>
             <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
               <Link to='/home'>Home</Link>

@@ -16,7 +16,7 @@ export default function Login() {
 
       <div className=' flex justify-center items-center h-full '>
         <div className=' max-w-[400px] w-full mx-auto bg-white dark:bg-zinc-500 p-8 rounded-lg relative'>
-          <h2 className='text-4xl font-bold text-center py-4'>N3XTzION.</h2>
+          <h2 className='text-4xl font-bold text-center py-4 dark:text-white'>N3XTzION.</h2>
           <div className='flex justify-between py-8'>
             <p className='border shadow-lg hover:shadow-xl dark:hover:shadow-zinc-800 px-6 py-2 relative flex items-center rounded-lg dark:text-zinc-300'>
               <AiFillFacebook className='mr-2' /> FaceBook

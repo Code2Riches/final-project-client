@@ -6,7 +6,9 @@ const PlatformsPage = () => {
   return (
     <div name='platforms' className='w-full my-22 pt-24'>
       <div className=' max-w-[1240] mx-auto px-2'>
-        <h2 className='text-5xl font-bold text-center'>All-In-One Platform</h2>
+        <h2 className='text-5xl font-bold text-center dark:text-white'>
+          All-In-One Platform
+        </h2>
         <p className='text-2xl py-8 text-gray-500 text-center'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint laborum
           accusantium iure ab vitae itaque nihil sed! Eum, optio fuga.

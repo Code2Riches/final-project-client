@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className='w-full mt-24 bg-zinc-900 text-gray-300 pt-8 pb-2 px-2'>
+    <div className='w-full mt-24 bg-zinc-900 text-gray-300 pt-8 pb-2 px-2 '>
       <div className=' max-w-[1240] mx-auto grid grid-cols-2 md:grid-cols-5 border-b-2 border-gray-600 py-8'>
         <div className=''>
           <h6 className=' font-bold uppercase pt-2 pl-4 '>

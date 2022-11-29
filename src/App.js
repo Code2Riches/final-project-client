@@ -36,7 +36,7 @@ const App = () => {
         },
         {
           path: "/home",
-          element: <HomePage />,
+          element: <HomePage urlEndPoint={urlEndPoint}/>,
         },
         {
           path: "/about",

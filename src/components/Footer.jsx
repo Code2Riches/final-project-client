@@ -12,21 +12,21 @@ const Footer = () => {
     <div className='w-full bg-zinc-900 text-gray-300 pt-8 pb-2 px-2 '>
       <div className='col-span-2 pt-8 md:pt-2 pr-4'>
           <p className='font-bold- uppercase'>Subscribe to our newsletter</p>
-          <p className='py-4'>
+          <p className='py-2'>
             The latestnews, articles, and resources, sent to your inbox weekly.
           </p>
           <div className='flex flex-col sm:flex-row'>
             <input
-              className=' w-1/2 p-2 rounded-md mb-4'
+              className=' w p-2 rounded-md mb-4 '
               type='email'
               placeholder='Enter email..'
             />
             <button className='p-2 mb-4'>Subscribe</button>
           </div>
         </div>
-      <div className=' max-w-[1240] mx-auto grid grid-cols-2 md:grid-cols-3 text-center border-b-2 border-gray-600 py-8'>
+      <div className=' max-w-[1240] mx-auto grid grid-cols-2 md:grid-cols-3 text-center border-b-2 border-gray-600 py-2'>
         <div className=''>
-          <h6 className=' font-bold uppercase pt-2 pl-4 '>
+          <h6 className=' font-bold uppercase'>
             Solutions
           </h6>
           <ul>
@@ -34,19 +34,19 @@ const Footer = () => {
             <li className='py-1 hover:text-gray-500'>Analytics</li>
             <li className='py-1 hover:text-gray-500'>Commerce</li>
             <li className='py-1 hover:text-gray-500'>Data</li>
-            <li className='py-1 hover:text-gray-500'>Cloud</li>
           </ul>
         </div>
         <div>
-          <h6 className=' font-bold uppercase pt-2 pl-4'>Support</h6>
+          <h6 className=' font-bold uppercase'>Support</h6>
           <ul>
             <li className='py-1 hover:text-gray-500'>Documentation</li>
             <li className='py-1 hover:text-gray-500'>Guides</li>
             <li className='py-1 hover:text-gray-500'>API Status</li>
+            <li className='py-1 hover:text-gray-500'>Cloud</li>
           </ul>
         </div>
         <div>
-          <h6 className=' font-bold uppercase pt-2 pl-4'>Company</h6>
+          <h6 className=' font-bold uppercase '>Company</h6>
           <ul>
             <li className='py-1 hover:text-gray-500'>About</li>
             <li className='py-1 hover:text-gray-500'>Blog</li>

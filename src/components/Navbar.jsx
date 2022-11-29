@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ToggleButton from "./Toggle";
-
+import { useAuth } from "../Hooks/auth";
 import {
   XMarkIcon,
   Cog8ToothIcon,
@@ -10,15 +10,18 @@ import {
 
 const Navbar = (props) => {
   const navigate = useNavigate();
-  const { sideBar, setSideBar, handleThemeSwitch, theme, setTheme } = props;
+  const { sideBar, setSideBar, handleThemeSwitch } = props;
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   const showSidebar = () => setSideBar(!sideBar);
+  const auth = useAuth();
   return (
     <div className='w-screen h-[80px] z-10 bg-zinc-200 dark:bg-zinc-600 top-0  fixed drop-shadow-lg'>
       <div className=' px-2 flex justify-between items-center w-full h-full'>
         <div className='flex items-center'>
-          <h1 className=' text-3xl font-bold mr-4 sm:text-4xl dark:text-white'>N3XTzION.</h1>
+          <h1 className=' text-3xl font-bold mr-4 sm:text-4xl dark:text-white'>
+            N3XTzION.
+          </h1>
           <ul className='hidden md:flex'>
             <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
               <Link to='/home'>Home</Link>
@@ -36,8 +39,8 @@ const Navbar = (props) => {
         </div>
         <div className=' hidden md:flex pr-4'>
           <div className='flex gap-5'>
-            <div className=' pt-4 flex'>
-              <p className="dark:text-zinc-300 text-black pr-2">Light/Dark</p>
+            <div className=' pt-4 flex '>
+              <p className='dark:text-zinc-300 text-black pr-2'>Light/Dark</p>
               <ToggleButton handleThemeSwitch={handleThemeSwitch} />
             </div>
             <button
@@ -49,17 +52,42 @@ const Navbar = (props) => {
               <ShoppingCartIcon className='w-7 rounded-full' />
             </button>
           </div>
-          <button
-            className='border-none bg-transparent text-black mr-4 dark:text-white dark:hover:text-indigo-400'
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            Sign in
-          </button>
-          <button className='px-8 py-3 dark:hover:text-indigo-400'>
-            Sign Up
-          </button>
+
+          {auth.userEmail ? (
+            <div className='flex'>
+              <div>
+                <h3>{auth.userEmail}</h3>
+              </div>
+              <div>
+                <button
+                  className='px-6 py-3 dark:hover:text-indigo-400'
+                  onClick={() => {
+                    auth.logout();
+                  }}
+                >
+                  Log Out
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className='flex'>
+              <div>
+                <button
+                  className='border-none bg-transparent text-black mr-4 dark:text-white dark:hover:text-indigo-400 px-2 py-3'
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                >
+                  Sign in
+                </button>
+              </div>
+              <div>
+                <button className='px-6 py-3 dark:hover:text-indigo-400'>
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          )}
         </div>
         <div className='flex pr-4 md:hidden'>
           <div className=' pt-1 pr-4'>
@@ -141,7 +169,13 @@ const Navbar = (props) => {
             </button>
           </div>
 
-          <button className='bg-transparent text-indigo-600 dark:text-white dark:hover:text-indigo-400 px-8 py-3 my-2'>
+          <button
+            className='bg-transparent text-indigo-600 dark:text-white dark:hover:text-indigo-400 px-8 py-3 my-2'
+            onClick={() => {
+              navigate("/login");
+              handleClick();
+            }}
+          >
             Sign In
           </button>
 

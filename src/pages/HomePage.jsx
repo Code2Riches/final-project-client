@@ -1,4 +1,6 @@
 import React from "react";
+import { useAuth } from "../Hooks/auth";
+import { useState, useEffect } from "react";
 import {
   CloudArrowDownIcon,
   CloudIcon,
@@ -6,7 +8,29 @@ import {
   ServerIcon,
 } from "@heroicons/react/24/solid";
 import soda from "../assets/soda.png";
-function HomePage() {
+function HomePage(props) {
+  const {urlEndpoint} = props;
+  const [message, setMessage] = useState("");
+  const auth = useAuth();
+
+  useEffect(()=>{
+    const fetchMessage = async () => {
+      const response = await fetch(`${urlEndpoint}/users/message`,{
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          [process.env.REACT_APP_TOKEN_HEADER_KEY]: auth.userToken,
+        },
+      });
+      setMessage(await response.message);
+    }
+    if(auth.userToken){
+      fetchMessage();
+    }
+    if(!auth.userToken){
+      setMessage("")
+    }
+  },[auth.userToken])
   return (
     <div
       name='home'

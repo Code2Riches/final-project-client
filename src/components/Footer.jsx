@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   FaFacebook,
@@ -30,26 +31,28 @@ const Footer = () => {
             Solutions
           </h6>
           <ul>
-            <li className='py-1 hover:text-gray-500'>Marketing</li>
-            <li className='py-1 hover:text-gray-500'>Analytics</li>
-            <li className='py-1 hover:text-gray-500'>Commerce</li>
-            <li className='py-1 hover:text-gray-500'>Data</li>
+            <li className='py-0 hover:text-gray-500'>Marketing</li>
+            <li className='py-0 hover:text-gray-500'>Analytics</li>
+            <li className='py-0 hover:text-gray-500'>Commerce</li>
+            <li className='py-0 hover:text-gray-500'>Data</li>
           </ul>
         </div>
         <div>
           <h6 className=' font-bold uppercase'>Support</h6>
           <ul>
-            <li className='py-1 hover:text-gray-500'>Documentation</li>
-            <li className='py-1 hover:text-gray-500'>Guides</li>
-            <li className='py-1 hover:text-gray-500'>API Status</li>
-            <li className='py-1 hover:text-gray-500'>Cloud</li>
+            <li className='py-0 hover:text-gray-500'>Documentation</li>
+            <li className='py-0 hover:text-gray-500'>Guides</li>
+            <li className='py-0 hover:text-gray-500'>API Status</li>
+            <li className='py-0 hover:text-gray-500'>Cloud</li>
           </ul>
         </div>
         <div>
           <h6 className=' font-bold uppercase '>Company</h6>
           <ul>
-            <li className='py-1 hover:text-gray-500'>About</li>
-            <li className='py-1 hover:text-gray-500'>Blog</li>
+            <li className='py-0 hover:text-gray-500'>
+              <Link to='/about'>About</Link>
+            </li>
+            <li className='py-0 hover:text-gray-500'>Blog</li>
           </ul>
         </div>
         

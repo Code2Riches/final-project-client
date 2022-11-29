@@ -4,7 +4,7 @@ import soda from "../assets/soda.png";
 
 const PlatformsPage = () => {
   return (
-    <div name='platforms' className='w-full my-22 pt-24'>
+    <div name='platforms' className='w-full my-20 pt-24'>
       <div className=' max-w-[1240] mx-auto px-2'>
         <h2 className='text-5xl font-bold text-center dark:text-white'>
           All-In-One Platform

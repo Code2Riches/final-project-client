@@ -29,10 +29,10 @@ export default function Login() {
           {registerMessage && <h3 className='font-bold'>{registerMessage}</h3>}
           <div className='flex justify-between py-8'>
             <p className='border shadow-lg hover:shadow-xl dark:hover:shadow-zinc-800 px-6 py-2 relative flex items-center rounded-lg dark:text-zinc-300'>
-              <AiFillFacebook className='mr-2' /> FaceBook
+              <AiFillFacebook className='mr-2' /><a href='https://www.facebook.com/'>FaceBook</a> 
             </p>
             <p className='border shadow-lg hover:shadow-xl dark:hover:shadow-zinc-800 px-6 py-2 relative flex items-center rounded-lg dark:text-zinc-300'>
-              <FcGoogle className='mr-2' /> Google
+              <FcGoogle className='mr-2' /><a href='https://www.google.com/'>Google</a>
             </p>
           </div>
           <div className='flex flex-col mb-4 relative'>

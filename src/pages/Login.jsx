@@ -5,6 +5,13 @@ import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import { useAuth } from "../Hooks/auth.js";
 import { useNavigate } from "react-router-dom";
+import {
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaTwitter,
+  FaTwitch,
+} from "react-icons/fa";
 
 export default function Login() {
   const [signUpButton, setSignUpButton] = useState(false);
@@ -88,6 +95,17 @@ export default function Login() {
             <input className='mr-2' type='checkbox' />
             Remember Me
           </p>
+          <p className='flex items-center relative mt-2 dark:text-zinc-300'>
+            <input className='mr-2' type='checkbox' />
+            Subscribe to our newsletter
+          </p>
+          <div className='flex justify-between sm:w-[300px] pt-4 text-2xl'>
+            <FaFacebook className="text-zinc-700 dark:text-zinc-300"/>
+            <FaInstagram className="text-zinc-700 dark:text-zinc-300"/>
+            <FaTwitter className="text-zinc-700 dark:text-zinc-300"/>
+            <FaTwitch className="text-zinc-700 dark:text-zinc-300"/>
+            <FaGithub className="text-zinc-700 dark:text-zinc-300"/>
+          </div>
           <p
             className='text-center mt-8 relative dark:text-zinc-300 hover:text-indigo-400 dark:hover:text-indigo-400 cursor-pointer'
             onClick={() => setSignUpButton(!signUpButton)}

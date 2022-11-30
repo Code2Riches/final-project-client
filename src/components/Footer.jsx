@@ -10,28 +10,28 @@ const Footer = () => {
             Solutions
           </h6>
           <ul>
-            <li className='py-0 hover:text-gray-500'>Marketing</li>
-            <li className='py-0 hover:text-gray-500'>Analytics</li>
-            <li className='py-0 hover:text-gray-500'>Commerce</li>
-            <li className='py-0 hover:text-gray-500'>Data</li>
+            <li className='py-0 hover:text-indigo-400'>Marketing</li>
+            <li className='py-0 hover:text-indigo-400'>Analytics</li>
+            <li className='py-0 hover:text-indigo-400'>Commerce</li>
+            <li className='py-0 hover:text-indigo-400'>Data</li>
           </ul>
         </div>
         <div>
           <h6 className=' font-bold uppercase'>Support</h6>
           <ul>
-            <li className='py-0 hover:text-gray-500'>Documentation</li>
-            <li className='py-0 hover:text-gray-500'>Guides</li>
-            <li className='py-0 hover:text-gray-500'>API Status</li>
-            <li className='py-0 hover:text-gray-500'>Cloud</li>
+            <li className='py-0 hover:text-indigo-400'>Documentation</li>
+            <li className='py-0 hover:text-indigo-400'>Guides</li>
+            <li className='py-0 hover:text-indigo-400'>API Status</li>
+            <li className='py-0 hover:text-indigo-400'>Cloud</li>
           </ul>
         </div>
         <div>
           <h6 className=' font-bold uppercase '>Company</h6>
           <ul>
-            <li className='py-0 hover:text-gray-500'>
+            <li className='py-0 hover:text-indigo-400'>
               <Link to='/about'>About</Link>
             </li>
-            <li className='py-0 hover:text-gray-500'>Blog</li>
+            <li className='py-0 hover:text-indigo-400'>Blog</li>
           </ul>
         </div>
         

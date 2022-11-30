@@ -14,6 +14,7 @@ const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 const App = () => {
   const [theme, setTheme] = useState("light");
   const [sideBar, setSideBar] = useState(false);
+  const [signUpButton, setSignUpButton] = useState(false);
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -27,6 +28,8 @@ const App = () => {
           handleThemeSwitch={handleThemeSwitch}
           theme={theme}
           setTheme={setTheme}
+          signUpButton={signUpButton}
+          setSignUpButton={setSignUpButton}
         />
       ),
       children: [
@@ -56,7 +59,7 @@ const App = () => {
         },
         {
           path: "/login",
-          element: <Login />,
+          element: <Login signUpButton={signUpButton} setSignUpButton={setSignUpButton} />,
         },
       ],
     },

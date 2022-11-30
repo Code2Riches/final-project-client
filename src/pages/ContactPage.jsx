@@ -39,7 +39,7 @@ const Support = () => {
               </p>
             </div>
             <div className='bg-slate-100 dark:bg-zinc-900 pl-8 py-4'>
-              <p className=' flex items-center text-indigo-600 dark:hover:text-white'>
+              <p className=' flex items-center text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
                 Contact Us <ArrowSmallRightIcon className='w-5 ml-2' />
               </p>
             </div>
@@ -55,7 +55,7 @@ const Support = () => {
               </p>
             </div>
             <div className='bg-slate-100 dark:bg-zinc-900 pl-8 py-4'>
-              <p className=' flex items-center text-indigo-600 dark:hover:text-white'>
+              <p className=' flex items-center text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
                 Contact Us <ArrowSmallRightIcon className='w-5 ml-2' />
               </p>
             </div>
@@ -71,7 +71,7 @@ const Support = () => {
               </p>
             </div>
             <div className='bg-slate-100 dark:bg-zinc-900 pl-8 py-4'>
-              <p className=' flex items-center text-indigo-600 dark:hover:text-white'>
+              <p className=' flex items-center text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
                 Contact Us <ArrowSmallRightIcon className='w-5 ml-2' />
               </p>
             </div>

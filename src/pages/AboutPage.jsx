@@ -12,8 +12,6 @@ import {
 const people = [
   {
     name: '@ClaytonStealth',
-      // (<href=https://github.com/ClaytonStealth/> `${'@ClayStealth'}`),
-    
     role: 'Baller',
     imageURL: Llama,
     bio: 'He came in like a WRECKING BALL.... #%$@!',
@@ -23,8 +21,6 @@ const people = [
   },
   {
     name: '@BrennanStopnik',
-    // Name #Github https://github.com/BrennanStopnik
-
     role: 'Baller',
     imageURL: bsProfile,
     bio: 'To Be, or NOT to be...!?',
@@ -34,8 +30,6 @@ const people = [
   },
  {
     name: '@Code2Riches',
-    // Name #Github https://github.com/Code2Riches
-
     role: 'Baller',
     imageURL: Bull,
     bio: 'CB talks a big game. He can easily get under your skin, if its soft... Nice guy overall!',
@@ -63,18 +57,13 @@ export default function AboutPage() {
                   <img className="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56" src={person.imageURL} alt="" />
                   <div className="space-y-2 xl:flex-col xl:text-center xl:items-center xl:justify-between">
                     <div className="space-y-1 text-lg font-medium leading-6">
-                      <h3 className="text-white">{person.name}
-             
-                      </h3>
+                      <h3 className="text-white">{person.name}</h3>
                       <p className="text-indigo-400">{person.role}</p>
                     </div>
                     <div className="space-y-2 text-sm font-sm leading-4 text-justify">
                       <p className="text-white">{person.bio}</p>
                     </div>
-
-
                     <ul role="list" className="flex justify-center space-x-5">
-                      
                     <li>
                         <a href={person.githubURL} className="text-gray-400 hover:text-gray-300">
                           <span className="sr-only">Github</span>

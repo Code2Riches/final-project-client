@@ -41,12 +41,12 @@ const people = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-zinc-200 dark:bg-zinc-700">
       <div className="mx-auto max-w-7xl pt-16 px-4 sm:px-6 lg:px-8 lg:py-24">
         <div className="space-y-12">
           <div className="pt-8 sm:pt-0 space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Dream Team</h2>
-            <p className="text-xl text-gray-300">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-gray-300 sm:text-4xl">Dream Team</h2>
+            <p className="text-xl text-zinc-800 dark:text-gray-300">
               We Get It Done!
             </p>
           </div>

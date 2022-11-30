@@ -130,7 +130,7 @@ export default function CartPage(props) {
                                     <div className="flex">
                                       <button
                                         type="button"
-                                        className="font-medium text-indigo-600 hover:text-indigo-500 dark:text-zinc-200 dark:hover:text-indigo-400 px-2 py-2"
+                                        className="font-medium text-indigo-600 hover:text-indigo-500=dark:text-zinc-200 dark:hover:text-indigo-400 px-2 py-2"
                                       >
                                         Remove
                                       </button>

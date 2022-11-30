@@ -1,6 +1,8 @@
 import React from "react";
 import Bull from "../assets/dadbod-centaur.jpg"
 import Llama from "../assets/ClayStealth.png"
+import bsProfile from "../assets/brennan-profile.png"
+
 import {
   FaGithub,
   FaTwitter,
@@ -9,30 +11,37 @@ import {
 
 const people = [
   {
-    name: '@ClayStealth',
-  
+    name: '@ClaytonStealth',
+      // (<href=https://github.com/ClaytonStealth/> `${'@ClayStealth'}`),
+    
     role: 'Baller',
     imageURL: Llama,
     bio: 'He came in like a WRECKING BALL.... #%$@!',
-    twitterUrl: '#',
-    linkedinUrl: '#',
+    githubURL: 'https://github.com/ClaytonStealth',
+    twitterUrl: 'https://twitter.com/Stea1thNFT',
+    linkedinUrl: 'https://www.linkedin.com/in/clayton-sestak/',
   },
   {
     name: '@BrennanStopnik',
+    // Name #Github https://github.com/BrennanStopnik
+
     role: 'Baller',
-    imageURL: '',
+    imageURL: bsProfile,
     bio: 'To Be, or NOT to be...!?',
+    githubURL: 'https://github.com/BrennanStopnik',
     twitterUrl: '#',
-    linkedinUrl: '#',
+    linkedinUrl: 'https://www.linkedin.com/in/brennan-stopnik/',
   },
  {
     name: '@Code2Riches',
+    // Name #Github https://github.com/Code2Riches
+
     role: 'Baller',
     imageURL: Bull,
     bio: 'CB talks a big game. He can easily get under your skin, if its soft... Nice guy overall!',
-    githubURL: '#',
-    linkedinUrl: '#',
-    twitterUrl: '#',
+    githubURL: 'https://github.com/Code2Riches',
+    linkedinUrl: 'https://linkedin.com/in/christianbenites',
+    twitterUrl: 'https://twitter.com/Chris_Benites',
   },
 ]
 
@@ -54,8 +63,8 @@ export default function AboutPage() {
                   <img className="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56" src={person.imageURL} alt="" />
                   <div className="space-y-2 xl:flex-col xl:text-center xl:items-center xl:justify-between">
                     <div className="space-y-1 text-lg font-medium leading-6">
-                      <h3 className="text-white">
-                      {/* <a href='https://github.com/ClaytonStealth'>{person.name}</a> */}
+                      <h3 className="text-white">{person.name}
+             
                       </h3>
                       <p className="text-indigo-400">{person.role}</p>
                     </div>
@@ -67,8 +76,8 @@ export default function AboutPage() {
                     <ul role="list" className="flex justify-center space-x-5">
                       
                     <li>
-                        <a href={person.githubUrl} className="text-gray-400 hover:text-gray-300">
-                          <span className="sr-only">Twitter</span>
+                        <a href={person.githubURL} className="text-gray-400 hover:text-gray-300">
+                          <span className="sr-only">Github</span>
                           <FaGithub className="h-5 w-5" />
                         </a>
                       </li>
@@ -95,46 +104,3 @@ export default function AboutPage() {
     </div>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// function AboutPage() {
-//   return (
-//     <div name='about' className='w-full my- pt-24 dark:bg-zinc-800'>
-//       <div className='max-w-[1240px] mx-auto dark:bg-zinc-800'>
-//         <div className=' text-center dark:bg-zinc-800'>
-//           <h2 className=' text-5xl font-bold dark:text-gray-300'>About us</h2>
-//           <p className='text-3xl py-6 text-gray-500 dark:text-gray-400'>
-//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eum
-//             expedita laudantium culpa dolor illum eligendi deleniti accusantium?
-//           </p>
-//         </div>
-//         <div className=' grid md:grid-cols-3 gap-1 px-2 text-center'>
-//           <div className=' border py-8 rounded-xl shadow-xl'>
-//             <p className='text-6xl font-bold text-indigo-600'>100%</p>
-//             <p className='text-gray-400 mt-2'>Completion</p>
-//           </div>
-//           <div className=' border py-8 rounded-xl shadow-xl'>
-//             <p className='text-6xl font-bold text-indigo-600'>24/7</p>
-//             <p className='text-gray-400 mt-2'>Delivery</p>
-//           </div>
-//           <div className=' border py-8 rounded-xl shadow-xl'>
-//             <p className='text-6xl font-bold text-indigo-600'>100k</p>
-//             <p className='text-gray-400 mt-2'>Transactions</p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default AboutPage;

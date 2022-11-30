@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import CartPage from "../components/CartPage";
+import CartPage from "../components/Cart";
 import { Outlet } from "react-router-dom";
 
 const GlobalLayouts = (props) => {

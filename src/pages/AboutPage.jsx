@@ -1,6 +1,7 @@
 import React from "react";
 import Bull from "../assets/dadbod-centaur.jpg"
 import Llama from "../assets/ClayStealth.png"
+import Wolf from "../assets/bstop.png"
 import {
   FaGithub,
   FaTwitter,
@@ -20,7 +21,7 @@ const people = [
   {
     name: '@BrennanStopnik',
     role: 'Baller',
-    imageURL: '',
+    imageURL: Wolf,
     bio: 'To Be, or NOT to be...!?',
     twitterUrl: '#',
     linkedinUrl: '#',

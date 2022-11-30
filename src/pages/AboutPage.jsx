@@ -57,7 +57,7 @@ export default function AboutPage() {
                   <img className="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56" src={person.imageURL} alt="" />
                   <div className="space-y-2 xl:flex-col xl:text-center xl:items-center xl:justify-between">
                     <div className="space-y-1 text-lg font-medium leading-6">
-                      <h3 className="text-white">{person.name}</h3>
+                      <h3 className="text-white"><a href={person.githubURL}>{person.name}</a></h3>
                       <p className="text-indigo-400">{person.role}</p>
                     </div>
                     <div className="space-y-2 text-sm font-sm leading-4 text-justify">

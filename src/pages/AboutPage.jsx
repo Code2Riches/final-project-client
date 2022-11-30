@@ -1,7 +1,7 @@
 import React from "react";
 import Bull from "../assets/dadbod-centaur.jpg"
 import Llama from "../assets/ClayStealth.png"
-import bsProfile from "../assets/brennan-profile.png"
+import Wolf from "../assets/bstop.png"
 
 import {
   FaGithub,
@@ -26,7 +26,7 @@ const people = [
     // Name #Github https://github.com/BrennanStopnik
 
     role: 'Baller',
-    imageURL: bsProfile,
+    imageURL: Wolf,
     bio: 'To Be, or NOT to be...!?',
     githubURL: 'https://github.com/BrennanStopnik',
     twitterUrl: '#',

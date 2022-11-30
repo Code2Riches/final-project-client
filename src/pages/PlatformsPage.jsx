@@ -6,13 +6,13 @@ import { useAuth } from "../Hooks/auth";
 import { useState } from "react";
 
 const PlatformsPage = (props) => {
-  const { nfts, urlEndpoint } = props;
+  const { nfts, urlEndPoint } = props;
   const auth = useAuth();
   const [successMessage, setSuccessMessage] = useState("");
   const handlePostNfts = async () => {
     // setShouldRefetch(true);
     setSuccessMessage("");
-    const response = await fetch(`${urlEndpoint}/nfts/add-many`, {
+    const response = await fetch(`${urlEndPoint}/nfts/add-many`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,10 +33,11 @@ const PlatformsPage = (props) => {
     setSuccessMessage("Nft created successfully");
     // setShouldRefetch(false);
   };
+  console.log(urlEndPoint);
   return (
     <div name='platforms' className='w-full my-20 pt-24'>
       <div className=' max-w-[1240] mx-auto px-2'>
-      {successMessage && <p>{successMessage}</p>}
+        {successMessage && <p>{successMessage}</p>}
         {auth.userEmail.includes("codeimmersives.com") ? (
           <div className='text-center'>
             <button

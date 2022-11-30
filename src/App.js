@@ -52,7 +52,7 @@ const App = () => {
         },
         {
           path: "/platforms",
-          element: <PlatformsPage nfts={nfts} />,
+          element: <PlatformsPage nfts={nfts} urlEndPoint={urlEndPoint} />,
         },
         {
           path: "/pricing",

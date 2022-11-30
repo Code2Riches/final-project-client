@@ -1,6 +1,7 @@
 import React from 'react'
 
 const SignUpbutton = () => {
+
   return (
     <button
               className='w-full py-3 mt-8 bg-indigo-600 hover:bg-transparent dark:hover:text-zinc-300 relative text-white rounded-lg'

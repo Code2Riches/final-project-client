@@ -12,7 +12,7 @@ import {
 const people = [
   {
     name: '@ClaytonStealth',
-    role: 'Baller',
+    role: '#BALLER',
     imageURL: Llama,
     bio: 'He came in like a WRECKING BALL.... #%$@!',
     githubURL: 'https://github.com/ClaytonStealth',
@@ -21,7 +21,7 @@ const people = [
   },
   {
     name: '@BrennanStopnik',
-    role: 'Baller',
+    role: '#BALLER',
     imageURL: Wolf,
     bio: 'To Be, or NOT to be...!?',
     githubURL: 'https://github.com/BrennanStopnik',
@@ -30,7 +30,7 @@ const people = [
   },
  {
     name: '@Code2Riches',
-    role: 'Baller',
+    role: '#HODLER',
     imageURL: Bull,
     bio: 'CB talks a big game. He can easily get under your skin, if its soft... Nice guy overall!',
     githubURL: 'https://github.com/Code2Riches',
@@ -52,7 +52,7 @@ export default function AboutPage() {
           </div>
           <ul role="list" className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
             {people.map((person) => (
-              <li key={person.name} className="rounded-lg bg-gray-800 py-10 px-6 text-center xl:px-10 xl:text-left">
+              <li key={person.name} className="rounded-lg bg-zinc-600 dark:bg-indigo-700/50 py-10 px-6 text-center xl:px-10 xl:text-left">
                 <div className="space-y-6 xl:space-y-10">
                   <img className="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56" src={person.imageURL} alt="" />
                   <div className="space-y-2 xl:flex-col xl:text-center xl:items-center xl:justify-between">

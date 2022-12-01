@@ -1,14 +1,27 @@
 import React from "react";
-import msoda from "../assets/mutant-soda.png";
-import soda from "../assets/soda.png";
 import NftCard from "../components/NftCard";
 import { useAuth } from "../Hooks/auth";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const PlatformsPage = (props) => {
-  const { nfts, urlEndPoint } = props;
+  const { nfts, setNfts, urlEndPoint } = props;
   const auth = useAuth();
   const [successMessage, setSuccessMessage] = useState("");
+  const params = useParams();
+  const [collection, setCollection] = useState(params.collection || "");
+  const [collectionNfts, setCollectionNfts] = useState(nfts);
+  const uniqueCollection = [];
+  nfts.forEach((nft) => {
+    //get collection name from nft
+    //check if its in unique collection array
+    //if not, add it
+    const collectionName = nft.collection.name;
+    const isInUniqueCollection = uniqueCollection.includes(collectionName);
+    if (!isInUniqueCollection) {
+      uniqueCollection.push(collectionName);
+    }
+  });
   const handlePostNfts = async () => {
     // setShouldRefetch(true);
     setSuccessMessage("");
@@ -33,24 +46,27 @@ const PlatformsPage = (props) => {
     setSuccessMessage("Nft created successfully");
     // setShouldRefetch(false);
   };
-  console.log(urlEndPoint);
+
+  useEffect(() => {
+    if (collection) {
+      const fetchCollection = async () => {
+        const response = await fetch(
+          `${urlEndPoint}/nfts/get-collection/${collection}`
+        );
+
+        console.log(collection);
+        const payload = await response.json();
+        setCollectionNfts(payload.result);
+        console.log(nfts);
+      };
+      fetchCollection();
+    }
+  }, [collection]);
+
   return (
     <div name='platforms' className='w-full my-20 pt-24'>
       <div className=' max-w-[1240] mx-auto px-2'>
         {successMessage && <p>{successMessage}</p>}
-        {auth.userEmail.includes("codeimmersives.com") ? (
-          <div className='text-center'>
-            <button
-              className='px-6 py-3 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
-              onClick={() => {
-                handlePostNfts();
-              }}
-            >
-              post nfts
-            </button>
-          </div>
-        ) : null}
-
         <h2 className='text-5xl font-bold text-center dark:text-white'>
           All-In-One Platform
         </h2>
@@ -58,10 +74,25 @@ const PlatformsPage = (props) => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint laborum
           accusantium iure ab vitae itaque nihil sed! Eum, optio fuga.
         </p>
+        <select
+          value={collection}
+          onChange={(e) => {
+            setCollection(e.target.value);
+          }}
+        >
+          <option value={""}>Select Something</option>
+          {uniqueCollection.map((collectionName, index) => {
+            return (
+              <option key={index} value={collectionName}>
+                {collectionName}
+              </option>
+            );
+          })}
+        </select>
 
-        <div className='flex flex-wrap pt-4 mx-auto gap-4 pl-12'>
-          {nfts.map((nft) => {
-            return <NftCard key={nft.token_id} nft={nft} />;
+        <div className='flex flex-wrap pt-4 mx-auto gap-4 '>
+          {collectionNfts.map((nft, index) => {
+            return <NftCard key={index} nft={nft} />;
           })}
         </div>
       </div>

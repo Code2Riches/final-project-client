@@ -8,6 +8,7 @@ import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import Support from "./pages/ContactPage";
+import ErrorPage from "./pages/ErrorPage";
 
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
@@ -33,6 +34,7 @@ const App = () => {
           setSignUpButton={setSignUpButton}
         />
       ),
+      errorElement: <ErrorPage />,
       children: [
         {
           element: <LandingPage urlEndPoint={urlEndPoint} />,
@@ -52,7 +54,7 @@ const App = () => {
         },
         {
           path: "/platforms",
-          element: <PlatformsPage nfts={nfts} urlEndPoint={urlEndPoint} />,
+          element: <PlatformsPage nfts={nfts} setNfts={setNfts} urlEndPoint={urlEndPoint} />,
         },
         {
           path: "/pricing",
@@ -80,11 +82,9 @@ const App = () => {
 
   useEffect(() => {
     const fetchNfts = async () => {
-      const result = await fetch(
-        "https://testnets-api.opensea.io/api/v1/assets?asset_contract_address=0x19B28d18CE73948c42328a800e5c8491F4Bd8cfC&order_direction=asc&offset=0&limit=20&include_orders=false"
-      );
+      const result = await fetch(`${urlEndPoint}/nfts/all`);
       const fetchedNftPayload = await result.json();
-      setNfts(fetchedNftPayload.assets);
+      setNfts(fetchedNftPayload.result);
     };
     fetchNfts();
   }, []);

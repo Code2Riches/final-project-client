@@ -1,11 +1,19 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import CartPage from "../components/CartPage";
+import CartPage from "../components/Cart";
 import { Outlet } from "react-router-dom";
 
 const GlobalLayouts = (props) => {
-  const { sideBar, setSideBar, handleThemeSwitch, theme, setTheme } = props;
+  const {
+    sideBar,
+    setSideBar,
+    handleThemeSwitch,
+    theme,
+    setTheme,
+    signUpButton,
+    setSignUpButton,
+  } = props;
   return (
     <div className='dark:bg-zinc-600'>
       <Navbar
@@ -14,6 +22,8 @@ const GlobalLayouts = (props) => {
         handleThemeSwitch={handleThemeSwitch}
         theme={theme}
         setTheme={setTheme}
+        signUpButton={signUpButton}
+        setSignUpButton={setSignUpButton}
       />
       <CartPage sideBar={sideBar} setSideBar={setSideBar} />
       <Outlet />

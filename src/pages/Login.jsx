@@ -13,8 +13,8 @@ import {
   FaTwitch,
 } from "react-icons/fa";
 
-export default function Login() {
-  const [signUpButton, setSignUpButton] = useState(false);
+export default function Login(props) {
+  const { signUpButton, setSignUpButton } = props;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [registerMessage, setRegisterMessage] = useState("");
@@ -69,7 +69,7 @@ export default function Login() {
           </div>
           {signUpButton ? (
             <button
-              className='w-full py-3 mt-8 bg-indigo-600 hover:bg-transparent dark:hover:text-zinc-300 relative text-white rounded-lg'
+              className='w-full py-3 mt-8 bg-indigo-600 hover:bg-transparent dark:bg-indigo-700/50  dark:hover:text-indigo-400 relative text-white rounded-lg'
               onClick={async () => {
                 const registerResult = await auth.register(email, password);
                 if (registerResult.success) {
@@ -84,7 +84,7 @@ export default function Login() {
             </button>
           ) : (
             <button
-              className='w-full py-3 mt-8 bg-indigo-600 hover:bg-transparent dark:hover:text-zinc-300 relative text-white rounded-lg'
+              className='w-full py-3 mt-8 bg-indigo-600 hover:bg-transparent dark:bg-indigo-700/50 dark:hover:text-indigo-400 relative text-white rounded-lg'
               onClick={async () => {
                 const loginResult = await auth.login(email, password);
                 if (loginResult.success) {

@@ -10,7 +10,7 @@ import {
 
 const Navbar = (props) => {
   const navigate = useNavigate();
-  const { sideBar, setSideBar, handleThemeSwitch } = props;
+  const { sideBar, setSideBar, handleThemeSwitch, setSignUpButton } = props;
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   const showSidebar = () => setSideBar(!sideBar);
@@ -44,12 +44,12 @@ const Navbar = (props) => {
               <ToggleButton handleThemeSwitch={handleThemeSwitch} />
             </div>
             <button
-              className=' rounded-full w-8 h-8 focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3'
+              className=' rounded-full w-8 h-8 focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3 dark:bg-indigo-700/50'
               onClick={() => {
                 showSidebar();
               }}
             >
-              <ShoppingCartIcon className='w-7 rounded-full' />
+              <ShoppingCartIcon className='w-7 rounded-full pl-1' />
             </button>
           </div>
 
@@ -60,7 +60,7 @@ const Navbar = (props) => {
               </div>
               <div>
                 <button
-                  className='px-6 py-3 dark:hover:text-indigo-400'
+                  className='px-6 py-3 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
                   onClick={() => {
                     auth.logout();
                   }}
@@ -73,8 +73,9 @@ const Navbar = (props) => {
             <div className='flex'>
               <div>
                 <button
-                  className='border-none bg-transparent text-black mr-4 dark:text-white dark:hover:text-indigo-400 px-2 py-3'
+                  className='border-none bg-transparent text-black mr-4 dark:text-white dark:hover:text-indigo-400 px-2 py-3 '
                   onClick={() => {
+                    setSignUpButton(false);
                     navigate("/login");
                   }}
                 >
@@ -82,7 +83,13 @@ const Navbar = (props) => {
                 </button>
               </div>
               <div>
-                <button className='px-6 py-3 dark:hover:text-indigo-400'>
+                <button
+                  className='px-6 py-3 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
+                  onClick={() => {
+                    setSignUpButton(true);
+                    navigate("/login");
+                  }}
+                >
                   Sign Up
                 </button>
               </div>
@@ -164,14 +171,15 @@ const Navbar = (props) => {
               showSidebar();
             }}
           >
-            <button className=' rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3'>
-              <ShoppingCartIcon className='w-6 ' />
+            <button className=' rounded-full w-6 h-6 focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3 dark:bg-indigo-700/50'>
+              <ShoppingCartIcon className='w-5 pl-1' />
             </button>
           </div>
 
           <button
             className='bg-transparent text-indigo-600 dark:text-white dark:hover:text-indigo-400 px-8 py-3 my-2'
             onClick={() => {
+              setSignUpButton(false);
               navigate("/login");
               handleClick();
             }}
@@ -179,7 +187,13 @@ const Navbar = (props) => {
             Sign In
           </button>
 
-          <button className='px-8 py-3 dark:hover:text-indigo-400'>
+          <button
+            className='px-8 py-3 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
+            onClick={() => {
+              setSignUpButton(true);
+              navigate("/login");
+            }}
+          >
             Sign Up
           </button>
         </div>

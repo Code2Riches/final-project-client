@@ -67,19 +67,6 @@ const PlatformsPage = (props) => {
     <div name='platforms' className='w-full my-20 pt-24'>
       <div className=' max-w-[1240] mx-auto px-2'>
         {successMessage && <p>{successMessage}</p>}
-        {auth.userEmail.includes("codeimmersives.com") ? (
-          <div className='text-center'>
-            <button
-              className='px-6 py-3 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
-              onClick={() => {
-                handlePostNfts();
-              }}
-            >
-              post nfts
-            </button>
-          </div>
-        ) : null}
-
         <h2 className='text-5xl font-bold text-center dark:text-white'>
           All-In-One Platform
         </h2>

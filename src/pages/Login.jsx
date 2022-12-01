@@ -20,6 +20,11 @@ export default function Login(props) {
   const [registerMessage, setRegisterMessage] = useState("");
   const auth = useAuth();
   const navigate = useNavigate();
+  const fbUrl='https://www.instagram.com/_n3xtzion_/'
+  const igUrl='https://www.instagram.com/_n3xtzion_/'
+  const twitterUrl='https://www.instagram.com/_n3xtzion_/'
+  const twitchUrl='https://www.instagram.com/_n3xtzion_/'
+  const gitUrl='https://www.instagram.com/_n3xtzion_/'
   return (
     <div className='relative w-full h-screen bg-zinc-900/90'>
       <img
@@ -99,12 +104,12 @@ export default function Login(props) {
             <input className='mr-2' type='checkbox' />
             Subscribe to our newsletter
           </p>
-          <div className='flex justify-between sm:w-[300px] pt-4 text-2xl'>
-            <FaFacebook className="text-zinc-700 dark:text-zinc-300"/>
-            <FaInstagram className="text-zinc-700 dark:text-zinc-300"/>
-            <FaTwitter className="text-zinc-700 dark:text-zinc-300"/>
-            <FaTwitch className="text-zinc-700 dark:text-zinc-300"/>
-            <FaGithub className="text-zinc-700 dark:text-zinc-300"/>
+          <div className='flex justify-between sm:w-[300px] pt-4 text-2xl pl-5'>
+            <a href="https://www.facebook.com/profile.php?id=100088389997417"><FaFacebook className="text-zinc-700 dark:text-zinc-300"/></a>
+            <a href="https://www.instagram.com/_n3xtzion_/"><FaInstagram className="text-zinc-700 dark:text-zinc-300"/></a>
+            <a href="https://twitter.com/N3XTzION"><FaTwitter className="text-zinc-700 dark:text-zinc-300"/></a>
+            <a href="https://www.twitch.tv/n3xtzion"><FaTwitch className="text-zinc-700 dark:text-zinc-300"/></a>
+            <a href="https://github.com/ClaytonStealth?tab=repositories"><FaGithub className="text-zinc-700 dark:text-zinc-300"/></a>
           </div>
           <p
             className='text-center mt-8 relative dark:text-zinc-300 hover:text-indigo-400 dark:hover:text-indigo-400 cursor-pointer'

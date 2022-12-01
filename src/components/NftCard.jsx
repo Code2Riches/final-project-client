@@ -3,11 +3,10 @@ import React from 'react'
 const NftCard = (props) => {
     const { nft } = props
   return (
-    <div className='flex flex-wrap pt-4 mx-auto gap-4 pl-12'>
           <div className=' flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-zinc-600 dark:bg-zinc-800 text-white w-[285px] '>
             <div>
               <img
-                src={nft.image_original_url}
+                src={nft.image_original_url ? nft.image_original_url : nft.image_url}
                 alt='/'
                 className=' rounded-xl w-[285px] display-block'
               />
@@ -28,7 +27,7 @@ const NftCard = (props) => {
               </p>
             </div>
           </div>
-        </div>
+        
   )
 }
 

@@ -20,11 +20,6 @@ export default function Login(props) {
   const [registerMessage, setRegisterMessage] = useState("");
   const auth = useAuth();
   const navigate = useNavigate();
-  const fbUrl='https://www.instagram.com/_n3xtzion_/'
-  const igUrl='https://www.instagram.com/_n3xtzion_/'
-  const twitterUrl='https://www.instagram.com/_n3xtzion_/'
-  const twitchUrl='https://www.instagram.com/_n3xtzion_/'
-  const gitUrl='https://www.instagram.com/_n3xtzion_/'
   return (
     <div className='relative w-full h-screen bg-zinc-900/90'>
       <img

@@ -64,7 +64,7 @@ const PlatformsPage = (props) => {
   }, [collection]);
 
   return (
-    <div name='platforms' className='w-full my-20 pt-24'>
+    <div name='platforms' className='w-full my-16 pt-24'>
       <div className=' max-w-[1240] mx-auto px-2'>
         {successMessage && <p>{successMessage}</p>}
         <h2 className='text-5xl font-bold text-center dark:text-white'>
@@ -90,7 +90,7 @@ const PlatformsPage = (props) => {
           })}
         </select>
 
-        <div className='flex flex-wrap pt-4 mx-auto gap-4 '>
+        <div className='flex flex-wrap pt-4 mx-auto gap-4 justify-start'>
           {collectionNfts.map((nft, index) => {
             return <NftCard key={index} nft={nft} />;
           })}

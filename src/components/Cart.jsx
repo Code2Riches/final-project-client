@@ -45,7 +45,7 @@ const products = [
 ];
 
 export default function CartPage(props) {
-  const { sideBar, setSideBar } = props;
+  const { sideBar, setSideBar, cart, } = props;
   return (
     <Transition.Root show={sideBar} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setSideBar}>
@@ -98,11 +98,11 @@ export default function CartPage(props) {
                             role="list"
                             className="-my-6 divide-y divide-gray-200"
                           >
-                            {products.map((product) => (
+                            {cart.map((product) => (
                               <li key={product.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
-                                    src={product.imageSrc}
+                                    src={product.image_url}
                                     alt={product.imageAlt}
                                     className="h-full w-full object-cover object-center"
                                   />
@@ -123,9 +123,6 @@ export default function CartPage(props) {
                                     </p>
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm">
-                                    <p className="text-gray-500 dark:text-zinc-200">
-                                      Qty {product.quantity}
-                                    </p>
 
                                     <div className="flex">
                                       <button

@@ -6,7 +6,15 @@ import { useParams } from "react-router-dom";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
 const PlatformsPage = (props) => {
-  const { nfts, setNfts, urlEndPoint, leftSideBar, showLeftSideBar } = props;
+  const {
+    nfts,
+    setNfts,
+    urlEndPoint,
+    leftSideBar,
+    showLeftSideBar,
+    cart,
+    setCart,
+  } = props;
   const auth = useAuth();
   const [successMessage, setSuccessMessage] = useState("");
   const params = useParams();
@@ -46,10 +54,15 @@ const PlatformsPage = (props) => {
         onClick={() => {
           showLeftSideBar();
         }}
-        className='flex items-center z-20 cursor-pointer absolute p-4 bg-black/90 text-gray-300 mx-auto'
+        className={
+          !leftSideBar
+            ? "flex items-center z-20 cursor-pointer absolute pt-2 text-black mx-auto "
+            : "hidden"
+        }
       >
-        <p className='px-2'>Options</p>
-        <FaArrowAltCircleRight className=' h-8 w-8' />
+        <button className='flex transition ease-in duration-100 hover:translate-x-4 bg-transparent text-black border-none'>
+          <FaArrowAltCircleRight className=' h-8 w-8' />
+        </button>
       </div>
 
       <div className=' max-w-[1240] mx-auto px-2'>
@@ -60,6 +73,12 @@ const PlatformsPage = (props) => {
               : "absolute top-0 h-screen left-[-100%] ease-in duration-500"
           }
         >
+          <FaArrowAltCircleLeft
+            className='h-8 w-8 cursor-pointer absolute top-0 right-0 mt-4 mr-4 ransition ease-in duration-100 hover:-translate-x-4'
+            onClick={() => {
+              showLeftSideBar();
+            }}
+          />
           <ul className='h-full w-full text-center pt-12'>
             <li className='text-2xl py-8'>
               <select
@@ -69,7 +88,7 @@ const PlatformsPage = (props) => {
                   setCollection(e.target.value);
                 }}
               >
-                <option value={""}>Select Something</option>
+                <option value={""}>Select Collection</option>
                 {uniqueCollection.map((collectionName, index) => {
                   return (
                     <option key={index} value={collectionName}>
@@ -97,7 +116,7 @@ const PlatformsPage = (props) => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint laborum
           accusantium iure ab vitae itaque nihil sed! Eum, optio fuga.
         </p>
-        <select
+        {/* <select
           value={collection}
           onChange={(e) => {
             setCollection(e.target.value);
@@ -111,11 +130,13 @@ const PlatformsPage = (props) => {
               </option>
             );
           })}
-        </select>
+        </select> */}
 
         <div className='flex flex-wrap pt-4 mx-auto gap-4 justify-start'>
           {collectionNfts.map((nft, index) => {
-            return <NftCard key={index} nft={nft} />;
+            return (
+              <NftCard key={index} nft={nft} cart={cart} setCart={setCart} />
+            );
           })}
         </div>
       </div>

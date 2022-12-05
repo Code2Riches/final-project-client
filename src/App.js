@@ -13,10 +13,12 @@ import ErrorPage from "./pages/ErrorPage";
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
 const App = () => {
+  const [leftSideBar, setLeftSideBar] = useState(false);
   const [nfts, setNfts] = useState([]);
   const [theme, setTheme] = useState("light");
   const [sideBar, setSideBar] = useState(false);
   const [signUpButton, setSignUpButton] = useState(false);
+  const showLeftSideBar = () => setLeftSideBar(!leftSideBar);
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -25,6 +27,7 @@ const App = () => {
       path: "/",
       element: (
         <GlobalLayouts
+          showLeftSideBar={showLeftSideBar}
           sideBar={sideBar}
           setSideBar={setSideBar}
           handleThemeSwitch={handleThemeSwitch}
@@ -54,7 +57,15 @@ const App = () => {
         },
         {
           path: "/platforms",
-          element: <PlatformsPage nfts={nfts} setNfts={setNfts} urlEndPoint={urlEndPoint} />,
+          element: (
+            <PlatformsPage
+              nfts={nfts}
+              setNfts={setNfts}
+              urlEndPoint={urlEndPoint}
+              leftSideBar={leftSideBar}
+              showLeftSideBar={showLeftSideBar}
+            />
+          ),
         },
         {
           path: "/pricing",

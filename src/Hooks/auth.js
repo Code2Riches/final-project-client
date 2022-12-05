@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
   const [userToken, setUserToken] = useState(null);
   const [userEmail, setUserEmail] = useState("");
   const [isAuthLoading, setIsAuthLoading] = useState(false);
+  const [userAvatar, setUserAvatar] = useState('')
 
   useEffect(() => {
     const userData = getLSUserData();
@@ -17,6 +18,9 @@ export const AuthProvider = ({ children }) => {
     }
     if (userData && userData.email) {
       setUserEmail(userData.email);
+    }
+    if (userData && userData.avatar) {
+      setUserAvatar(userData.avatar);
     }
   }, [isAuthLoading]);
 
@@ -33,7 +37,8 @@ export const AuthProvider = ({ children }) => {
     setIsAuthLoading(true);
     const loginResult = await loginUser(email, password);
     if (loginResult.success) {
-      setLSUserData(loginResult.token, loginResult.email);
+      console.log(loginResult)
+      setLSUserData(loginResult.token, loginResult.email, loginResult.avatar);
     }
     setIsAuthLoading(false);
     return loginResult;
@@ -57,6 +62,7 @@ export const AuthProvider = ({ children }) => {
     () => ({
       userToken,
       userEmail,
+      userAvatar,
       login,
       logout,
       register,
@@ -102,10 +108,10 @@ const loginUser = async (email, password) => {
   return responseJSON;
 };
 
-const setLSUserData = (token, email) => {
+const setLSUserData = (token, email, avatar) => {
   localStorage.setItem(
     process.env.REACT_APP_TOKEN_HEADER_KEY,
-    JSON.stringify({ token, email })
+    JSON.stringify({ token, email, avatar })
   );
 };
 

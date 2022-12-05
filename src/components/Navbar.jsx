@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ToggleButton from "./Toggle";
 import { useAuth } from "../Hooks/auth";
+
 import {
   XMarkIcon,
   Cog8ToothIcon,
@@ -17,6 +18,7 @@ const Navbar = (props) => {
   const showSidebar = () => setSideBar(!sideBar);
 
   const auth = useAuth();
+ 
   return (
     <div className='w-screen h-[80px] z-10 bg-zinc-200 dark:bg-zinc-600 top-0  fixed drop-shadow-lg'>
       <div className=' px-2 flex justify-between items-center w-full h-full'>
@@ -41,35 +43,37 @@ const Navbar = (props) => {
         </div>
         <div className=' hidden md:flex pr-4'>
           <div className='flex gap-5'>
-            <div className=' pt-4 flex '>
+            <div className=' pt-6 flex '>
               <p className='dark:text-zinc-300 text-black pr-2'>Light/Dark</p>
               <ToggleButton handleThemeSwitch={handleThemeSwitch} />
             </div>
             <button
-              className=' rounded-full w-8 h-8 focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3 dark:bg-indigo-700/50'
+              className='w-9 h-9 mt-5 rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-6 mt-3 dark:bg-indigo-700/50'
               onClick={() => {
                 showSidebar();
               }}
             >
-              <ShoppingCartIcon className='w-7 rounded-full pl-1' />
+              <ShoppingCartIcon className='w-8 rounded-full' />
             </button>
           </div>
-
+            
           {auth.userEmail ? (
             <div className='flex'>
               <div>
-                <h3>{auth.userEmail}</h3>
+                  <img className="w-9 rounded-full mt-5 mr-5" src={auth.userAvatar} alt="" />
+
+                  {/* <img className="inline-block h-10 w-10 rounded-md" src={person.avatar} alt="" /> */}
               </div>
-              <div>
+                <div>
                 <button
-                  className='px-6 py-3 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
+                  className='px-6 py-2 my-4 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
                   onClick={() => {
                     auth.logout();
                   }}
                 >
                   Log Out
                 </button>
-              </div>
+                </div>
             </div>
           ) : (
             <div className='flex'>

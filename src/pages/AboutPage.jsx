@@ -50,8 +50,10 @@ export default function AboutPage() {
               We Get It Done!
             </p>
           </div>
+
           <ul role="list" className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
             {people.map((person) => (
+
               <li key={person.name} className="rounded-lg bg-zinc-600 dark:bg-indigo-700/50 py-10 px-6 text-center xl:px-10 xl:text-left">
                 <div className="space-y-6 xl:space-y-10">
                   <img className="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56" src={person.imageURL} alt="" />

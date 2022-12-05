@@ -3,9 +3,11 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CartPage from "../components/Cart";
 import { Outlet } from "react-router-dom";
+import ControlBar from "../components/ControlBar";
 
 const GlobalLayouts = (props) => {
   const {
+    showLeftSideBar,
     sideBar,
     setSideBar,
     handleThemeSwitch,

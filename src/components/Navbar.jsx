@@ -7,6 +7,7 @@ import {
   Cog8ToothIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
+import { FaBars } from "react-icons/fa";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ const Navbar = (props) => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   const showSidebar = () => setSideBar(!sideBar);
+
   const auth = useAuth();
   return (
     <div className='w-screen h-[80px] z-10 bg-zinc-200 dark:bg-zinc-600 top-0  fixed drop-shadow-lg'>
@@ -23,16 +25,16 @@ const Navbar = (props) => {
             N3XTzION.
           </h1>
           <ul className='hidden md:flex'>
-            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
+            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400 cursor-pointer'>
               <Link to='/home'>Home</Link>
             </li>
-            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
+            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400 cursor-pointer'>
               <Link to='/about'>About</Link>
             </li>
-            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
+            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400 cursor-pointer'>
               <Link to='/support'>Support</Link>
             </li>
-            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
+            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400 cursor-pointer'>
               <Link to='/platforms'>Platforms</Link>
             </li>
           </ul>

@@ -3,9 +3,11 @@ import NftCard from "../components/NftCard";
 import { useAuth } from "../Hooks/auth";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
 const PlatformsPage = (props) => {
-  const { nfts, setNfts, urlEndPoint } = props;
+  
+  const { nfts, setNfts, urlEndPoint, leftSideBar, showLeftSideBar } = props;
   const auth = useAuth();
   const [successMessage, setSuccessMessage] = useState("");
   const params = useParams();
@@ -22,30 +24,6 @@ const PlatformsPage = (props) => {
       uniqueCollection.push(collectionName);
     }
   });
-  const handlePostNfts = async () => {
-    // setShouldRefetch(true);
-    setSuccessMessage("");
-    const response = await fetch(`${urlEndPoint}/nfts/add-many`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        nfts: nfts,
-      }),
-    });
-    if (response.ok !== true) {
-      setSuccessMessage("Nft network request failed");
-      return;
-    }
-    const payload = await response.json();
-    if (payload.success !== true) {
-      setSuccessMessage(`Nft server error", ${payload.error}`);
-      return;
-    }
-    setSuccessMessage("Nft created successfully");
-    // setShouldRefetch(false);
-  };
 
   useEffect(() => {
     if (collection) {
@@ -65,8 +43,53 @@ const PlatformsPage = (props) => {
 
   return (
     <div name='platforms' className='w-full my-16 pt-24'>
+      <div
+        onClick={() => {
+          showLeftSideBar();
+        }}
+        className='flex items-center z-20 cursor-pointer absolute p-4 bg-black/90 text-gray-300 mx-auto'
+      >
+        <p className='px-2'>Options</p>
+        <FaArrowAltCircleRight className=' h-8 w-8' />
+      </div>
+
       <div className=' max-w-[1240] mx-auto px-2'>
-        {successMessage && <p>{successMessage}</p>}
+        <div
+          className={
+            leftSideBar
+              ? "overflow-y-scroll ease-in duration-300 absolute text-gray-300 left-0 top-0 w-full h-screen bg-black/90 px-4 py-7 flex flex-col z-10"
+              : "absolute top-0 h-screen left-[-100%] ease-in duration-500"
+          }
+        >
+          <ul className='h-full w-full text-center pt-12'>
+            <li className='text-2xl py-8'>
+            <select className="text-black"
+          value={collection}
+          onChange={(e) => {
+            setCollection(e.target.value);
+          }}
+        >
+          <option value={""}>Select Something</option>
+          {uniqueCollection.map((collectionName, index) => {
+            return (
+              <option key={index} value={collectionName}>
+                {collectionName}
+              </option>
+            );
+          })}
+        </select>
+            </li>
+            <li className='text-2xl py-8'>
+              <a href='#gallery'>Gallery</a>
+            </li>
+            <li className='text-2xl py-8'>
+              <a href='#deals'>Deals</a>
+            </li>
+            <li className='text-2xl py-8'>
+              <a href='#contact'>Contact</a>
+            </li>
+          </ul>
+        </div>
         <h2 className='text-5xl font-bold text-center dark:text-white'>
           All-In-One Platform
         </h2>

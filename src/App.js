@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import Support from "./pages/ContactPage";
 import ErrorPage from "./pages/ErrorPage";
+import ProfilePage from "./pages/ProfilePage";
 
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
@@ -80,6 +81,10 @@ const App = () => {
             />
           ),
         },
+        {
+          path:"/profile",
+          element: <ProfilePage />
+        }
       ],
     },
   ]);

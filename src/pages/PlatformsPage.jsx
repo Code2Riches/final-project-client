@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
 const PlatformsPage = (props) => {
-  
   const { nfts, setNfts, urlEndPoint, leftSideBar, showLeftSideBar } = props;
   const auth = useAuth();
   const [successMessage, setSuccessMessage] = useState("");
@@ -57,27 +56,28 @@ const PlatformsPage = (props) => {
         <div
           className={
             leftSideBar
-              ? "overflow-y-scroll ease-in duration-300 absolute text-gray-300 left-0 top-0 w-full h-screen bg-black/90 px-4 py-7 flex flex-col z-10"
+              ? "overflow-y-hidden ease-in duration-300 absolute text-gray-300 left-0 top-0 w-1/3 h-screen bg-black/90 px-4 py-7 flex flex-col z-10"
               : "absolute top-0 h-screen left-[-100%] ease-in duration-500"
           }
         >
           <ul className='h-full w-full text-center pt-12'>
             <li className='text-2xl py-8'>
-            <select className="text-black"
-          value={collection}
-          onChange={(e) => {
-            setCollection(e.target.value);
-          }}
-        >
-          <option value={""}>Select Something</option>
-          {uniqueCollection.map((collectionName, index) => {
-            return (
-              <option key={index} value={collectionName}>
-                {collectionName}
-              </option>
-            );
-          })}
-        </select>
+              <select
+                className='text-black'
+                value={collection}
+                onChange={(e) => {
+                  setCollection(e.target.value);
+                }}
+              >
+                <option value={""}>Select Something</option>
+                {uniqueCollection.map((collectionName, index) => {
+                  return (
+                    <option key={index} value={collectionName}>
+                      {collectionName}
+                    </option>
+                  );
+                })}
+              </select>
             </li>
             <li className='text-2xl py-8'>
               <a href='#gallery'>Gallery</a>

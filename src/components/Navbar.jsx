@@ -48,7 +48,7 @@ const Navbar = (props) => {
               <ToggleButton handleThemeSwitch={handleThemeSwitch} />
             </div>
             <button
-              className='w-9 h-9 mt-5 rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-6 mt-3 dark:bg-indigo-700/50'
+              className='w-9 h-9 mt-5 rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-6 dark:bg-indigo-700/50'
               onClick={() => {
                 showSidebar();
               }}

@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth } from "../Hooks/auth";
 import { useState, useEffect } from "react";
 import Carousel from "../components/Carousel";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -9,7 +10,7 @@ function HomePage(props) {
   const {urlEndpoint} = props;
   const [message, setMessage] = useState("");
   const auth = useAuth();
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(()=>{
     const fetchMessage = async () => {
@@ -51,9 +52,9 @@ const navigate = useNavigate();
           </button>
         </div>
       </div>
-      <div className="grid md:grid-cols justify-center">
+      {/* <div className="grid md:grid-cols justify-center">
         <Carousel />
-      </div>
+      </div> */}
       {/* <div className='absolute flex flex-col py-0 md:min-w-[560px] bottom-[5%] mx-0 md:left transform md:translate-x-1/4 bg-zinc-200 dark:bg-zinc-800 border border-slate-300 rounded-xl text-center shadow-xl'>
         <p className='dark:text-gray-300'> Data Services</p>
         <div className='flex justify-between flex-wrap px-4'>

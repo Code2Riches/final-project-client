@@ -65,14 +65,11 @@ const Navbar = (props) => {
                 navigate("/profile")
               }}>
                   <img className="w-9 rounded-full mt-5 mr-5" src={auth.userAvatar} alt="CB" />
-
-                  {/* <img className="inline-block h-10 w-10 rounded-md" src={person.avatar} alt="" /> */}
               </div>
                 <div>
                 <button
                   className='px-6 py-2 my-4 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
                   onClick={() => {
-            
                     auth.logout();
                     navigate("/home")
                   }}

@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth } from "../Hooks/auth";
 import { useState, useEffect } from "react";
 import Carousel from "../components/Carousel";
+import { useNavigate } from "react-router-dom";
 
 
 

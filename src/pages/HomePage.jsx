@@ -4,17 +4,15 @@ import { useState, useEffect } from "react";
 import Carousel from "../components/Carousel";
 import { useNavigate } from "react-router-dom";
 
-
-
 function HomePage(props) {
-  const {urlEndpoint} = props;
+  const { urlEndpoint } = props;
   const [message, setMessage] = useState("");
   const auth = useAuth();
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  useEffect(() => {
     const fetchMessage = async () => {
-      const response = await fetch(`${urlEndpoint}/users/message`,{
+      const response = await fetch(`${urlEndpoint}/users/message`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -22,14 +20,14 @@ function HomePage(props) {
         },
       });
       setMessage(await response.message);
-    }
-    if(auth.userToken){
+    };
+    if (auth.userToken) {
       fetchMessage();
     }
-    if(!auth.userToken){
-      setMessage("")
+    if (!auth.userToken) {
+      setMessage("");
     }
-  },[auth.userToken])
+  }, [auth.userToken]);
   return (
     <div
       name='home'
@@ -44,17 +42,19 @@ function HomePage(props) {
             NFT Market
           </h1>
           <p className='text-2xl dark:text-gray-300'>This is our MarketPlace</p>
-          <button className='py-3 px-6 sm:w-[60%] my-4 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
-            onClick={()=>{
-              navigate("/platforms")
-            }}>
+          <button
+            className='py-3 px-6 sm:w-[60%] my-4 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
+            onClick={() => {
+              navigate("/platforms");
+            }}
+          >
             Get Started
           </button>
         </div>
       </div>
-      {/* <div className="grid md:grid-cols justify-center">
+      <div className='grid md:grid-cols justify-center'>
         <Carousel />
-      </div> */}
+      </div>
       {/* <div className='absolute flex flex-col py-0 md:min-w-[560px] bottom-[5%] mx-0 md:left transform md:translate-x-1/4 bg-zinc-200 dark:bg-zinc-800 border border-slate-300 rounded-xl text-center shadow-xl'>
         <p className='dark:text-gray-300'> Data Services</p>
         <div className='flex justify-between flex-wrap px-4'>

@@ -12,13 +12,13 @@ const ProfilePage = () => {
                     <form className="divide-y-blue-gray-200 mt-6 space-y-8 divide-y">
                       <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-6 sm:gap-x-6">
                         <div className="sm:col-span-6">
-                          <h2 className="text-xl font-medium text-blue-gray-900">Profile</h2>
+                          <h2 className="text-xl font-medium text-blue-gray-900">Profile{auth.userEmail}</h2>
                           {/* <p className="mt-1 text-sm text-blue-gray-500">
                             This information will be displayed publicly so be careful what you share.
                           </p> */}
                         </div>
 
-                        {/* <div className="sm:col-span-3">
+                        <div className="sm:col-span-3">
                           <label htmlFor="first-name" className="block text-sm font-medium text-blue-gray-900">
                             First name
                           </label>
@@ -29,9 +29,9 @@ const ProfilePage = () => {
                             autoComplete="given-name"
                             className="mt-1 block w-full rounded-md border-blue-gray-300 text-blue-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                           />
-                        </div> */}
+                        </div>
 
-                        {/* <div className="sm:col-span-3">
+                        <div className="sm:col-span-3">
                           <label htmlFor="last-name" className="block text-sm font-medium text-blue-gray-900">
                             Last name
                           </label>
@@ -42,7 +42,7 @@ const ProfilePage = () => {
                             autoComplete="family-name"
                             className="mt-1 block w-full rounded-md border-blue-gray-300 text-blue-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                           />
-                        </div> */}
+                        </div>
 
                         {/* <div className="sm:col-span-6">
                           <label htmlFor="username" className="block text-sm font-medium text-blue-gray-900">
@@ -91,11 +91,15 @@ const ProfilePage = () => {
                               </div>
                               <button
                                 type="button"
-                                className="ml-3 rounded-md border border-transparent bg-transparent py-2 px-3 text-sm font-medium text-blue-gray-900 hover:text-blue-gray-700 focus:border-blue-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-gray-50"
+                                className="ml-3 rounded-md border border-transparent bg-black py-2 px-3 text-sm font-medium text-blue-gray-900 hover:text-blue-gray-700 focus:border-blue-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-gray-50"
                               >
                                 Remove
                               </button>
                             </div>
+                          </div>
+                          <div className="sm:col-span-6">
+                            <br/>
+                            <h2 className="text-xl font-medium text-blue-gray-900">{auth.userCoin}</h2>
                           </div>
                         </div>
 
@@ -202,7 +206,7 @@ const ProfilePage = () => {
                       <div className="flex justify-end pt-8">
                         <button
                           type="button"
-                          className="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-blue-gray-900 shadow-sm hover:bg-blue-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                          className="rounded-md border border-gray-300 bg-blue-200 py-2 px-4 text-sm font-medium text-blue-gray-900 shadow-sm hover:bg-blue-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                         >
                           Cancel
                         </button>

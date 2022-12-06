@@ -8,6 +8,12 @@ const NftCard = (props) => {
     // const result = await fetch(`${urlEndPoint}/nfts/get-by-id/${id}`);
     if (nft) setCart([...cart, selectNft]);
   };
+
+  const pushToCart = async (selectNft) => {
+    
+  };
+
+  
   return (
     <div className='relative duration-75 transform hover:scale-105 flex flex-col shadow-2xl shadow-slate-800 rounded-xl text-center  bg-zinc-600 dark:bg-zinc-800 text-white w-[285px] '>
       <div>

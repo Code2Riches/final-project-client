@@ -9,7 +9,13 @@ export const AuthProvider = ({ children }) => {
   const [userToken, setUserToken] = useState(null);
   const [userEmail, setUserEmail] = useState("");
   const [isAuthLoading, setIsAuthLoading] = useState(false);
-  const [userAvatar, setUserAvatar] = useState('')
+  const [userAvatar, setUserAvatar] = useState("");
+  const [userFirstName, setUserFirstName] = useState("");
+  const [userLastName, setUserLastName] = useState("");
+  const [userCoin, setUserCoin] = useState(0);
+  const [userCart, setUserCart] = useState([]);
+  const [userCartHistory, setUserCartHistory] = useState([]);
+
 
   useEffect(() => {
     const userData = getLSUserData();
@@ -21,6 +27,21 @@ export const AuthProvider = ({ children }) => {
     }
     if (userData && userData.avatar) {
       setUserAvatar(userData.avatar);
+    }
+    if (userData && userData.firstName) {
+      setUserFirstName(userData.firstName);
+    }
+    if (userData && userData.lastName) {
+      setUserLastName(userData.lastName);
+    }
+    if (userData && userData.coin) {
+      setUserCoin(userData.coin);
+    }
+    if (userData && userData.cart) {
+      setUserCart(userData.cart);
+    }
+    if (userData && userData.cartHistory) {
+      setUserCartHistory(userData.cartHistory);
     }
   }, [isAuthLoading]);
 
@@ -38,7 +59,7 @@ export const AuthProvider = ({ children }) => {
     const loginResult = await loginUser(email, password);
     if (loginResult.success) {
       console.log(loginResult)
-      setLSUserData(loginResult.token, loginResult.email, loginResult.avatar);
+      setLSUserData(loginResult.token, loginResult.email, loginResult.avatar, loginResult.firstName, loginResult.lastName, loginResult.coin, loginResult.cart, loginResult.cartHistory);
     }
     setIsAuthLoading(false);
     return loginResult;
@@ -63,6 +84,11 @@ export const AuthProvider = ({ children }) => {
       userToken,
       userEmail,
       userAvatar,
+      userFirstName,
+      userLastName,
+      userCoin,
+      userCart,
+      userCartHistory,
       login,
       logout,
       register,
@@ -108,10 +134,10 @@ const loginUser = async (email, password) => {
   return responseJSON;
 };
 
-const setLSUserData = (token, email, avatar) => {
+const setLSUserData = (token, email, avatar, firstName, lastName, coin, cart, cartHistory) => {
   localStorage.setItem(
     process.env.REACT_APP_TOKEN_HEADER_KEY,
-    JSON.stringify({ token, email, avatar })
+    JSON.stringify({ token, email, avatar, firstName, lastName, coin, cart, cartHistory})
   );
 };
 

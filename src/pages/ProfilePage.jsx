@@ -12,15 +12,21 @@ const ProfilePage = () => {
                     <form className="divide-y-blue-gray-200 mt-6 space-y-8 divide-y">
                       <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-6 sm:gap-x-6">
                         <div className="sm:col-span-6">
-                          <h2 className="text-xl font-medium text-blue-gray-900">Profile{auth.userEmail}</h2>
+                          <h2 className="text-xl font-medium text-blue-gray-900">Profile</h2>
                           {/* <p className="mt-1 text-sm text-blue-gray-500">
                             This information will be displayed publicly so be careful what you share.
                           </p> */}
                         </div>
 
                         <div className="sm:col-span-3">
+                        <label htmlFor="email-address" className="block text-sm font-medium text-blue-gray-900">
+                             Email address: {auth.userEmail}
+                        </label>
+                        </div><br/>
+
+                        <div className="sm:col-span-3">
                           <label htmlFor="first-name" className="block text-sm font-medium text-blue-gray-900">
-                            First name
+                            First name:
                           </label>
                           <input
                             type="text"
@@ -33,7 +39,7 @@ const ProfilePage = () => {
 
                         <div className="sm:col-span-3">
                           <label htmlFor="last-name" className="block text-sm font-medium text-blue-gray-900">
-                            Last name
+                            Last name:
                           </label>
                           <input
                             type="text"
@@ -43,25 +49,6 @@ const ProfilePage = () => {
                             className="mt-1 block w-full rounded-md border-blue-gray-300 text-blue-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                           />
                         </div>
-
-                        {/* <div className="sm:col-span-6">
-                          <label htmlFor="username" className="block text-sm font-medium text-blue-gray-900">
-                            Username
-                          </label>
-                          <div className="mt-1 flex rounded-md shadow-sm">
-                            <span className="inline-flex items-center rounded-l-md border border-r-0 border-blue-gray-300 bg-blue-gray-50 px-3 text-blue-gray-500 sm:text-sm">
-                            N3XTzION.com/
-                            </span>
-                            <input
-                              type="text"
-                              name="username"
-                              id="username"
-                              autoComplete="username"
-                              defaultValue="YourUserNameHere"
-                              className="block w-full min-w-0 flex-1 rounded-none rounded-r-md border-blue-gray-300 text-blue-gray-900 focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                            />
-                          </div>
-                        </div> */}
 
                         <div className="sm:col-span-6">
                           <label htmlFor="photo" className="block text-sm font-medium text-blue-gray-900">
@@ -102,106 +89,7 @@ const ProfilePage = () => {
                             <h2 className="text-xl font-medium text-blue-gray-900">${auth.userCoin}</h2>
                           </div>
                         </div>
-
-                        {/* <div className="sm:col-span-6">
-                          <label htmlFor="description" className="block text-sm font-medium text-blue-gray-900">
-                            Description
-                          </label>
-                          <div className="mt-1">
-                            <textarea
-                              id="description"
-                              name="description"
-                              rows={4}
-                              className="block w-full rounded-md border-blue-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                              defaultValue={''}
-                            />
-                          </div>
-                          <p className="mt-3 text-sm text-blue-gray-500">
-                            Brief description for your profile. URLs are hyperlinked.
-                          </p>
-                        </div>
-
-                        <div className="sm:col-span-6">
-                          <label htmlFor="url" className="block text-sm font-medium text-blue-gray-900">
-                            URL
-                          </label>
-                          <input
-                            type="text"
-                            name="url"
-                            id="url"
-                            className="mt-1 block w-full rounded-md border-blue-gray-300 text-blue-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                          />
-                        </div> */}
                       </div>
-
-                      {/* <div className="grid grid-cols-1 gap-y-6 pt-8 sm:grid-cols-6 sm:gap-x-6">
-                        <div className="sm:col-span-6">
-                          <h2 className="text-xl font-medium text-blue-gray-900">Personal Information</h2>
-                          <p className="mt-1 text-sm text-blue-gray-500">
-                            This information will be displayed publicly so be careful what you share.
-                          </p>
-                        </div>
-
-                        <div className="sm:col-span-3">
-                          <label htmlFor="email-address" className="block text-sm font-medium text-blue-gray-900">
-                            Email address
-                          </label>
-                          <input
-                            type="text"
-                            name="email-address"
-                            id="email-address"
-                            autoComplete="email"
-                            className="mt-1 block w-full rounded-md border-blue-gray-300 text-blue-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                          />
-                        </div>
-
-                        <div className="sm:col-span-3">
-                          <label htmlFor="phone-number" className="block text-sm font-medium text-blue-gray-900">
-                            Phone number
-                          </label>
-                          <input
-                            type="text"
-                            name="phone-number"
-                            id="phone-number"
-                            autoComplete="tel"
-                            className="mt-1 block w-full rounded-md border-blue-gray-300 text-blue-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                          />
-                        </div>
-
-                        <div className="sm:col-span-3">
-                          <label htmlFor="country" className="block text-sm font-medium text-blue-gray-900">
-                            Country
-                          </label>
-                          <select
-                            id="country"
-                            name="country"
-                            autoComplete="country-name"
-                            className="mt-1 block w-full rounded-md border-blue-gray-300 text-blue-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                          >
-                            <option />
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>Mexico</option>
-                          </select>
-                        </div>
-
-                        <div className="sm:col-span-3">
-                          <label htmlFor="language" className="block text-sm font-medium text-blue-gray-900">
-                            Language
-                          </label>
-                          <input
-                            type="text"
-                            name="language"
-                            id="language"
-                            className="mt-1 block w-full rounded-md border-blue-gray-300 text-blue-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                          />
-                        </div>
-
-                        <p className="text-sm text-blue-gray-500 sm:col-span-6">
-                          This account was created on{' '}
-                          <time dateTime="2017-01-05T20:35:40">January 5, 2017, 8:35:40 PM</time>.
-                        </p>
-                      </div> */}
 
                       <div className="flex justify-end pt-8">
                         <button

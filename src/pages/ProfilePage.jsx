@@ -99,7 +99,7 @@ const ProfilePage = () => {
                           </div>
                           <div className="sm:col-span-6">
                             <br/>
-                            <h2 className="text-xl font-medium text-blue-gray-900">{auth.userCoin}</h2>
+                            <h2 className="text-xl font-medium text-blue-gray-900">${auth.userCoin}</h2>
                           </div>
                         </div>
 

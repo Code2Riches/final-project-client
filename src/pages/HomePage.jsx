@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth } from "../Hooks/auth";
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   CloudArrowDownIcon,
   CloudIcon,
@@ -8,10 +9,13 @@ import {
   ServerIcon,
 } from "@heroicons/react/24/solid";
 import soda from "../assets/soda.png";
+
+
 function HomePage(props) {
   const {urlEndpoint} = props;
   const [message, setMessage] = useState("");
   const auth = useAuth();
+const navigate = useNavigate();
 
   useEffect(()=>{
     const fetchMessage = async () => {
@@ -45,7 +49,10 @@ function HomePage(props) {
             NFT Market
           </h1>
           <p className='text-2xl dark:text-gray-300'>This is our MarketPlace</p>
-          <button className='py-3 px-6 sm:w-[60%] my-4 dark:hover:text-indigo-400 dark:bg-indigo-700/50'>
+          <button className='py-3 px-6 sm:w-[60%] my-4 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
+            onClick={()=>{
+              navigate("/platforms")
+            }}>
             Get Started
           </button>
         </div>

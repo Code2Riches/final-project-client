@@ -10,11 +10,9 @@ import Login from "./pages/Login";
 import Support from "./pages/ContactPage";
 import ErrorPage from "./pages/ErrorPage";
 import ProfilePage from "./pages/ProfilePage";
-
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
 const App = () => {
-  const [cart, setCart] = useState([]);
   const [leftSideBar, setLeftSideBar] = useState(false);
   const [nfts, setNfts] = useState([]);
   const [theme, setTheme] = useState("light");
@@ -29,8 +27,6 @@ const App = () => {
       path: "/",
       element: (
         <GlobalLayouts
-          cart={cart}
-          setCart={setCart}
           showLeftSideBar={showLeftSideBar}
           sideBar={sideBar}
           setSideBar={setSideBar}
@@ -63,8 +59,6 @@ const App = () => {
           path: "/platforms",
           element: (
             <PlatformsPage
-              cart={cart}
-              setCart={setCart}
               nfts={nfts}
               setNfts={setNfts}
               urlEndPoint={urlEndPoint}

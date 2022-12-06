@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
   const [userCoin, setUserCoin] = useState(0);
   const [userCart, setUserCart] = useState([]);
   const [userCartHistory, setUserCartHistory] = useState([]);
-
+  const [shouldRefresh, setShouldRefresh] = useState(false);
 
   useEffect(() => {
     const userData = getLSUserData();
@@ -43,7 +43,39 @@ export const AuthProvider = ({ children }) => {
     if (userData && userData.cartHistory) {
       setUserCartHistory(userData.cartHistory);
     }
+    setShouldRefresh(false);
   }, [isAuthLoading]);
+
+  useEffect(() => {
+    const fetchUserData = async (token) => {
+      setIsAuthLoading(true);
+      const res = await fetch(`${urlEndpoint}/users/me`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          [process.env.REACT_APP_TOKEN_HEADER_KEY]: token,
+        },
+      });
+      const responseJSON = await res.json();
+
+      if (responseJSON.success) {
+        setLSUserData(
+          responseJSON.token,
+          responseJSON.email,
+          responseJSON.avatar,
+          responseJSON.firstName,
+          responseJSON.lastName,
+          responseJSON.coin,
+          responseJSON.cart,
+          responseJSON.cartHistory
+        );
+      }
+      setIsAuthLoading(false);
+    };
+    if (shouldRefresh) {
+      fetchUserData(userToken);
+    }
+  }, [shouldRefresh]);
 
   // call this function when you want to register the user
   const register = async (email, password) => {
@@ -58,8 +90,16 @@ export const AuthProvider = ({ children }) => {
     setIsAuthLoading(true);
     const loginResult = await loginUser(email, password);
     if (loginResult.success) {
-      console.log(loginResult)
-      setLSUserData(loginResult.token, loginResult.email, loginResult.avatar, loginResult.firstName, loginResult.lastName, loginResult.coin, loginResult.cart, loginResult.cartHistory);
+      setLSUserData(
+        loginResult.token,
+        loginResult.email,
+        loginResult.avatar,
+        loginResult.firstName,
+        loginResult.lastName,
+        loginResult.coin,
+        loginResult.cart,
+        loginResult.cartHistory
+      );
     }
     setIsAuthLoading(false);
     return loginResult;
@@ -92,8 +132,18 @@ export const AuthProvider = ({ children }) => {
       login,
       logout,
       register,
+      setShouldRefresh,
     }),
-    [userToken]
+    [
+      userToken,
+      isAuthLoading,
+      userCart,
+      userCartHistory,
+      userCoin,
+      userFirstName,
+      userLastName,
+      userAvatar,
+    ]
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
@@ -134,10 +184,28 @@ const loginUser = async (email, password) => {
   return responseJSON;
 };
 
-const setLSUserData = (token, email, avatar, firstName, lastName, coin, cart, cartHistory) => {
+const setLSUserData = (
+  token,
+  email,
+  avatar,
+  firstName,
+  lastName,
+  coin,
+  cart,
+  cartHistory
+) => {
   localStorage.setItem(
     process.env.REACT_APP_TOKEN_HEADER_KEY,
-    JSON.stringify({ token, email, avatar, firstName, lastName, coin, cart, cartHistory})
+    JSON.stringify({
+      token,
+      email,
+      avatar,
+      firstName,
+      lastName,
+      coin,
+      cart,
+      cartHistory,
+    })
   );
 };
 

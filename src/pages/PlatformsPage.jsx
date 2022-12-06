@@ -12,8 +12,6 @@ const PlatformsPage = (props) => {
     urlEndPoint,
     leftSideBar,
     showLeftSideBar,
-    cart,
-    setCart,
   } = props;
   const auth = useAuth();
   const [successMessage, setSuccessMessage] = useState("");
@@ -39,10 +37,8 @@ const PlatformsPage = (props) => {
           `${urlEndPoint}/nfts/get-collection/${collection}`
         );
 
-        console.log(collection);
         const payload = await response.json();
         setCollectionNfts(payload.result);
-        console.log(nfts);
       };
       fetchCollection();
     }
@@ -135,7 +131,11 @@ const PlatformsPage = (props) => {
         <div className='flex flex-wrap pt-4 mx-auto gap-4 justify-start'>
           {collectionNfts.map((nft, index) => {
             return (
-              <NftCard key={index} nft={nft} cart={cart} setCart={setCart} />
+              <NftCard
+                key={index}
+                nft={nft}
+                urlEndPoint={urlEndPoint}
+              />
             );
           })}
         </div>

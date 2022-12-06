@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { CarouselData } from "./CarouselData";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { AiOutlineLeft, AiOutlineRight, AiFillAccountBook } from "react-icons/ai";
 import Swipe from "react-easy-swipe";
 
 class Carousel extends Component {
@@ -21,7 +21,7 @@ class Carousel extends Component {
             : this.state.currentSlide + 1;
         this.setState({ currentSlide: newSlide });
       }
-    }, 3000);
+    }, 5000);
   }
 
   nextSlide = () => {
@@ -47,7 +47,7 @@ class Carousel extends Component {
   render() {
     return (
       <div className="mt-0 pb-20 ">
-        <div className="max-w-lg h-72 flex overflow-hidden relative justify-center">
+        <div className=" flex overflow-hidden relative justify-center rounded-xl">
           <AiOutlineLeft
             onClick={this.prevSlide}
             className="absolute left-0 text-3xl inset-y-1/2 text-white cursor-pointer dark:text-gray-800"
@@ -62,7 +62,7 @@ class Carousel extends Component {
                   key={index}
                   className={
                     index === this.state.currentSlide
-                      ? "block w-full h-auto object-cover"
+                      ? "block h-auto object-cover w-[600px]"
                       : "hidden"
                   }
                   onMouseEnter={() => {
@@ -84,7 +84,7 @@ class Carousel extends Component {
                     index === this.state.currentSlide
                       ? "h-2 w-2 bg-blue-700  dark:bg-indigo-700/50 rounded-full mx-2 mb-2 cursor-pointer"
                       : "h-2 w-2 bg-white dark:bg-gray-800 rounded-full mx-2 mb-2 cursor-pointer"
-                  }
+                  } 
                   key={index}
                   onClick={() => {
                     this.setCurrentSlide(index);

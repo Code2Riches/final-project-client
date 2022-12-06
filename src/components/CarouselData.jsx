@@ -1,7 +1,7 @@
 export const CarouselData = [
   {
     image:
-      "https://i.seadn.io/gae/CrpKo16ArLV_SCLXz9Bp2T4k08Nfana7TzhlrI3Fj7jqO0rUVXvbHi6YK9DhOZI6tQ5N0LR5zGVvOCHw4xhqDdBZV1FFBnDp_G4lPw?w=500&auto=format",
+      "https://i.seadn.io/gae/CrpKo16ArLV_SCLXz9Bp2T4k08Nfana7TzhlrI3Fj7jqO0rUVXvbHi6YK9DhOZI6tQ5N0LR5zGVvOCHw4xhqDdBZV1FFBnDp_G4lPw?w=1000&auto=format",
   },
   {
     image:

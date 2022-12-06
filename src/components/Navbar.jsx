@@ -10,6 +10,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { FaBars } from "react-icons/fa";
 
+
+
 const Navbar = (props) => {
   const navigate = useNavigate();
   const { sideBar, setSideBar, handleThemeSwitch, setSignUpButton } = props;
@@ -62,7 +64,7 @@ const Navbar = (props) => {
               <div onClick={()=>{
                 navigate("/profile")
               }}>
-                  <img className="w-9 rounded-full mt-5 mr-5" src={auth.userAvatar} alt="" />
+                  <img className="w-9 rounded-full mt-5 mr-5" src={auth.userAvatar} alt="CB" />
 
                   {/* <img className="inline-block h-10 w-10 rounded-md" src={person.avatar} alt="" /> */}
               </div>

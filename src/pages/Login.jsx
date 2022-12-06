@@ -42,6 +42,8 @@ export default function Login(props) {
               <FcGoogle className='mr-2' /><a href='https://www.google.com/'>Google</a>
             </p>
           </div>
+
+          
           <div className='flex flex-col mb-4 relative'>
             <label>Email</label>
             <input

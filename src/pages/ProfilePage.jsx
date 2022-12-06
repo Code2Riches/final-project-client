@@ -23,6 +23,7 @@ const ProfilePage = () => {
                              Email address: {auth.userEmail}
                         </label>
                         </div><br/>
+                        
 
                         <div className="sm:col-span-3">
                           <label htmlFor="first-name" className="block text-sm font-medium text-blue-gray-900">

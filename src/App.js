@@ -9,14 +9,18 @@ import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import Support from "./pages/ContactPage";
 import ErrorPage from "./pages/ErrorPage";
+import ProfilePage from "./pages/ProfilePage";
 
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
 const App = () => {
+  const [cart, setCart] = useState([]);
+  const [leftSideBar, setLeftSideBar] = useState(false);
   const [nfts, setNfts] = useState([]);
   const [theme, setTheme] = useState("light");
   const [sideBar, setSideBar] = useState(false);
   const [signUpButton, setSignUpButton] = useState(false);
+  const showLeftSideBar = () => setLeftSideBar(!leftSideBar);
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -25,6 +29,9 @@ const App = () => {
       path: "/",
       element: (
         <GlobalLayouts
+          cart={cart}
+          setCart={setCart}
+          showLeftSideBar={showLeftSideBar}
           sideBar={sideBar}
           setSideBar={setSideBar}
           handleThemeSwitch={handleThemeSwitch}
@@ -54,7 +61,17 @@ const App = () => {
         },
         {
           path: "/platforms",
-          element: <PlatformsPage nfts={nfts} setNfts={setNfts} urlEndPoint={urlEndPoint} />,
+          element: (
+            <PlatformsPage
+              cart={cart}
+              setCart={setCart}
+              nfts={nfts}
+              setNfts={setNfts}
+              urlEndPoint={urlEndPoint}
+              leftSideBar={leftSideBar}
+              showLeftSideBar={showLeftSideBar}
+            />
+          ),
         },
         {
           path: "/pricing",
@@ -68,6 +85,10 @@ const App = () => {
               setSignUpButton={setSignUpButton}
             />
           ),
+        },
+        {
+          path: "/profile",
+          element: <ProfilePage />,
         },
       ],
     },

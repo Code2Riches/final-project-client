@@ -31,10 +31,10 @@ function HomePage(props) {
   return (
     <div
       name='home'
-      className='w-full h-screen bg-zinc-200 dark:bg-zinc-700 flex flex-col justify-between'
+      className='w-full h-screen bg-zinc-200 dark:bg-zinc-700 flex flex-col justify-between pt-20'
     >
       <div className='grid md:grid-cols max-w-[1240px] m-auto'>
-        <div className=' flex flex-col justify-center md:items-start w-full px-2 py-8'>
+        <div className=' flex flex-col justify-center items-center w-full px-2 py-8'>
           <p className='text-2xl dark:text-gray-300 justify-center'>
             N3XTzION. Marketplace
           </p>
@@ -52,7 +52,7 @@ function HomePage(props) {
           </button>
         </div>
       </div>
-      <div className='grid md:grid-cols justify-center'>
+      <div className='grid justify-center'>
         <Carousel />
       </div>
       {/* <div className='absolute flex flex-col py-0 md:min-w-[560px] bottom-[5%] mx-0 md:left transform md:translate-x-1/4 bg-zinc-200 dark:bg-zinc-800 border border-slate-300 rounded-xl text-center shadow-xl'>

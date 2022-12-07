@@ -17,6 +17,7 @@ const GlobalLayouts = (props) => {
     setSignUpButton,
     cart,
     setCart,
+    urlEndPoint,
   } = props;
   return (
     <div className='dark:bg-zinc-600'>
@@ -34,6 +35,7 @@ const GlobalLayouts = (props) => {
         setSideBar={setSideBar}
         cart={cart}
         setCart={setCart}
+        urlEndPoint={urlEndPoint}
       />
       <Outlet />
       <Footer />

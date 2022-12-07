@@ -56,7 +56,7 @@ const PlatformsPage = (props) => {
             : "hidden"
         }
       >
-        <button className='flex transition ease-in duration-100 hover:translate-x-4 bg-transparent text-black border-none'>
+        <button className='flex transition ease-in duration-100 hover:translate-x-4 bg-transparent text-black border-none fixed'>
           <FaArrowAltCircleRight className=' h-8 w-8' />
         </button>
       </div>

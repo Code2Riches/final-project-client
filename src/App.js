@@ -27,6 +27,7 @@ const App = () => {
       path: "/",
       element: (
         <GlobalLayouts
+          urlEndPoint={urlEndPoint}
           showLeftSideBar={showLeftSideBar}
           sideBar={sideBar}
           setSideBar={setSideBar}
@@ -82,7 +83,7 @@ const App = () => {
         },
         {
           path: "/profile",
-          element: <ProfilePage />,
+          element: <ProfilePage urlEndPoint={urlEndPoint}/>,
         },
       ],
     },

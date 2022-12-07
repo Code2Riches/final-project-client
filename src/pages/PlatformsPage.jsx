@@ -128,7 +128,7 @@ const PlatformsPage = (props) => {
           })}
         </select> */}
 
-        <div className='flex flex-wrap pt-4 mx-auto gap-4 justify-start'>
+        <div className='flex flex-wrap pt-4 mx-auto gap-4 justify-center'>
           {collectionNfts.map((nft, index) => {
             return (
               <NftCard

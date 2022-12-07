@@ -1,13 +1,56 @@
 import React from "react";
 
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useAuth } from "../Hooks/auth";
-export default function CartPage(props) {
-  const { sideBar, setSideBar, cart } = props;
 
+export default function CartPage(props) {
+  const { sideBar, setSideBar, cart, urlEndPoint } = props;
+  const [subtotal, setSubtotal] = useState(0);
   const auth = useAuth();
+  const removeFromCart = async (pickedNft) => {
+    const result = await fetch(`${urlEndPoint}/users/delete-cart-item`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: auth.userEmail,
+        _id: pickedNft._id,
+      }),
+    });
+    const payload = await result.json();
+    if (payload) {
+      auth.setShouldRefresh(true);
+    }
+  };
+
+  useEffect(() => {
+    const sub = auth.userCart.reduce((acc, item) => {
+      return acc + item.coin;
+    }, 0);
+    setSubtotal(sub);
+  }, [auth.userCart]);
+
+  const checkout = async () => {
+    const result = await fetch(`${urlEndPoint}/users/checkout`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: auth.userEmail,
+        cart: auth.userCart,
+        total: subtotal,
+      }),
+    });
+    const payload = await result.json();
+    if (payload) {
+      auth.setShouldRefresh(true);
+    }
+  };
+
   return (
     <Transition.Root show={sideBar} as={Fragment}>
       <Dialog as='div' className='relative z-10' onClose={setSideBar}>
@@ -79,7 +122,7 @@ export default function CartPage(props) {
                                             {product.name}
                                           </a>
                                         </h3>
-                                        <p className='ml-4'>{product.price}</p>
+                                        <p className='ml-4'>${product.coin}</p>
                                       </div>
                                       <p className='mt-1 text-sm text-gray-500 dark:text-zinc-200'>
                                         {product.color}
@@ -88,6 +131,9 @@ export default function CartPage(props) {
                                     <div className='flex flex-1 items-end justify-between text-sm'>
                                       <div className='flex'>
                                         <button
+                                          onClick={() => {
+                                            removeFromCart(product);
+                                          }}
                                           type='button'
                                           className='font-medium text-indigo-600 hover:text-indigo-500=dark:text-zinc-200 dark:hover:text-indigo-400 px-2 py-2'
                                         >
@@ -108,13 +154,16 @@ export default function CartPage(props) {
                       <div className='flex justify-between text-base font-medium text-gray-900 dark:text-zinc-200'>
                         <p>Subtotal</p>
                         {/* Adjust to Sum amounts of items */}
-                        <p>$262.00</p>
+                        <p>${auth.userCart ? subtotal : "0"}</p>
                       </div>
                       <p className='mt-0.5 text-sm text-gray-500 dark:text-zinc-400'>
                         Shipping and taxes calculated at checkout.
                       </p>
                       <div className='mt-6'>
                         <button
+                          onClick={() => {
+                            checkout();
+                          }}
                           type='button'
                           className='flex items-center justify-center w-full rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 dark:bg-indigo-700/50 dark:hover:bg-indigo-400 dark:text-zinc-200'
                         >

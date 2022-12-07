@@ -41,7 +41,7 @@ const NftCard = (props) => {
         <h3 className='font-bold text-lg'>{nft.name}</h3>
         <h3 className='font-bold text-lg'>{nft.collection.name}</h3>
         <p className='text-lg pt-2 pb-4 px-2 text-left flex justify-between'>
-          420${" "}
+          ${nft.coin ? nft.coin : "Not for sale"}
           <button
             onClick={() => {
               pushToCart(nft);

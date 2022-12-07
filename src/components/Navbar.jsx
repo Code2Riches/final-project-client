@@ -45,12 +45,12 @@ const Navbar = (props) => {
         </div>
         <div className=' hidden md:flex pr-4'>
           <div className='flex gap-5'>
-            <div className=' pt-6 flex '>
+            <div className=' my-auto flex '>
               <p className='dark:text-zinc-300 text-black pr-2'>Light/Dark</p>
               <ToggleButton handleThemeSwitch={handleThemeSwitch} />
             </div>
             <button
-              className='w-9 h-9 mt-5 rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-6 dark:bg-indigo-700/50'
+              className='w-9 h-9 my-auto rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-6 dark:bg-indigo-700/50'
               onClick={() => {
                 showSidebar();
               }}
@@ -65,14 +65,13 @@ const Navbar = (props) => {
                 navigate("/profile")
               }}>
                   <img className="w-9 rounded-full mt-5 mr-5" src={auth.userAvatar} alt="CB" />
-
-                  {/* <img className="inline-block h-10 w-10 rounded-md" src={person.avatar} alt="" /> */}
               </div>
                 <div>
                 <button
                   className='px-6 py-2 my-4 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
                   onClick={() => {
                     auth.logout();
+                    navigate("/home")
                   }}
                 >
                   Log Out

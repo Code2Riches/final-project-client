@@ -2,10 +2,10 @@ import React from "react";
 import { useAuth } from "../Hooks/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Fragment } from "react";
-
 
 export default function ProfilePage(props) {
   const { saveButton, setSaveButton } = props;
@@ -39,7 +39,7 @@ export default function ProfilePage(props) {
       auth.setShouldRefresh(true);
     }
   };
-
+  console.log(auth.userCartHistory);
   return (
 
     <div className="flex-1 xl:overflow-y-auto">
@@ -264,7 +264,10 @@ export default function ProfilePage(props) {
               <br />
               <div className='sm:col-span-6'>
                 <h2 className='text-xl font-medium text-blue-gray-900'>
-                  Space for User Cart History {auth.userCartHistory}
+                  Space for User Cart History{" "}
+                  {auth.userCartHistory.map((order) => {
+                    return order.purchaseDate + order.total;
+                  })}
                 </h2>
               </div>
             </div>

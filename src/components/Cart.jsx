@@ -8,6 +8,7 @@ import { useAuth } from "../Hooks/auth";
 export default function CartPage(props) {
   const { sideBar, setSideBar, cart, urlEndPoint } = props;
   const [subtotal, setSubtotal] = useState(0);
+  const [doesUserHaveEnough, setDoesUserHaveEnough] = useState(true);
   const auth = useAuth();
   const removeFromCart = async (pickedNft) => {
     const result = await fetch(`${urlEndPoint}/users/delete-cart-item`, {
@@ -31,9 +32,13 @@ export default function CartPage(props) {
       return acc + item.coin;
     }, 0);
     setSubtotal(sub);
+    if(sub > auth.userCoin){
+      setDoesUserHaveEnough(false)
+    }
   }, [auth.userCart]);
 
   const checkout = async () => {
+    const idsArray = auth.userCart.map((item)=> item._id)
     const result = await fetch(`${urlEndPoint}/users/checkout`, {
       method: "PUT",
       headers: {
@@ -43,6 +48,7 @@ export default function CartPage(props) {
         email: auth.userEmail,
         cart: auth.userCart,
         total: subtotal,
+        ids: idsArray
       }),
     });
     const payload = await result.json();
@@ -50,7 +56,7 @@ export default function CartPage(props) {
       auth.setShouldRefresh(true);
     }
   };
-
+  
   return (
     <Transition.Root show={sideBar} as={Fragment}>
       <Dialog as='div' className='relative z-10' onClose={setSideBar}>

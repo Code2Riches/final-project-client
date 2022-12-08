@@ -56,7 +56,7 @@ const PlatformsPage = (props) => {
             : "hidden"
         }
       >
-        <button className='flex transition ease-in duration-100 hover:translate-x-4 bg-transparent text-black border-none fixed'>
+        <button className='flex transition ease-in duration-100 hover:translate-x-3 bg-transparent text-black border-none fixed'>
           <FaArrowAltCircleRight className=' h-8 w-8' />
         </button>
       </div>
@@ -65,12 +65,12 @@ const PlatformsPage = (props) => {
         <div
           className={
             leftSideBar
-              ? "overflow-y-hidden ease-in duration-300 absolute text-gray-300 left-0 top-0 w-1/3 h-screen bg-black/90 px-4 py-7 flex flex-col z-10"
-              : "absolute top-0 h-screen left-[-100%] ease-in duration-500"
+              ? "overflow-y-hidden ease-in duration-300 fixed text-gray-300 left-0 top-0 w-full sm:w-2/3 md:w-3/5 lg:w-2/5 h-screen bg-black/90 px-4 py-7 flex flex-col z-10"
+              : "absolute top-0 h-screen left-[-150%] sm:left-[-100%] ease-in duration-500"
           }
         >
           <FaArrowAltCircleLeft
-            className='h-8 w-8 cursor-pointer absolute top-0 right-0 mt-4 mr-4 ransition ease-in duration-100 hover:-translate-x-4'
+            className='h-8 w-8 cursor-pointer absolute top-0 right-0 mt-4 mr-4 ransition ease-in duration-100 hover:-translate-x-3'
             onClick={() => {
               showLeftSideBar();
             }}

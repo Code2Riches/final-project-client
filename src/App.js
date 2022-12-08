@@ -85,7 +85,7 @@ const App = () => {
           path: "/profile",
 
           element: <ProfilePage  urlEndPoint={urlEndPoint}/>,
- main
+ 
         },
       ],
     },

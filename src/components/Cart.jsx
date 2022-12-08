@@ -8,7 +8,8 @@ import { useAuth } from "../Hooks/auth";
 export default function CartPage(props) {
   const { sideBar, setSideBar, cart, urlEndPoint } = props;
   const [subtotal, setSubtotal] = useState(0);
-  const [doesUserHaveEnough, setDoesUserHaveEnough] = useState(true);
+  const [doesUserHaveEnough, setDoesUserHaveEnough] = useState(false);
+  const [balance, setBalance] = useState(0);
   const auth = useAuth();
   const removeFromCart = async (pickedNft) => {
     const result = await fetch(`${urlEndPoint}/users/delete-cart-item`, {
@@ -32,13 +33,18 @@ export default function CartPage(props) {
       return acc + item.coin;
     }, 0);
     setSubtotal(sub);
-    if(sub > auth.userCoin){
-      setDoesUserHaveEnough(false)
+    if (auth.userCoin >= sub) {
+      setDoesUserHaveEnough(true);
+      const bal = auth.userCoin - sub;
+      setBalance(bal);
+    } else {
+      setDoesUserHaveEnough(false);
     }
   }, [auth.userCart]);
 
   const checkout = async () => {
-    const idsArray = auth.userCart.map((item)=> item._id)
+    auth.setShouldRefresh(false);
+    const idsArray = auth.userCart.map((item) => item._id);
     const result = await fetch(`${urlEndPoint}/users/checkout`, {
       method: "PUT",
       headers: {
@@ -48,7 +54,8 @@ export default function CartPage(props) {
         email: auth.userEmail,
         cart: auth.userCart,
         total: subtotal,
-        ids: idsArray
+        balance: balance,
+        ids: idsArray,
       }),
     });
     const payload = await result.json();
@@ -56,7 +63,7 @@ export default function CartPage(props) {
       auth.setShouldRefresh(true);
     }
   };
-  
+
   return (
     <Transition.Root show={sideBar} as={Fragment}>
       <Dialog as='div' className='relative z-10' onClose={setSideBar}>
@@ -166,15 +173,19 @@ export default function CartPage(props) {
                         Shipping and taxes calculated at checkout.
                       </p>
                       <div className='mt-6'>
-                        <button
-                          onClick={() => {
-                            checkout();
-                          }}
-                          type='button'
-                          className='flex items-center justify-center w-full rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 dark:bg-indigo-700/50 dark:hover:bg-indigo-400 dark:text-zinc-200'
-                        >
-                          Checkout
-                        </button>
+                        {doesUserHaveEnough ? (
+                          <button
+                            onClick={() => {
+                              checkout();
+                            }}
+                            type='button'
+                            className='flex items-center justify-center w-full rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 dark:bg-indigo-700/50 dark:hover:bg-indigo-400 dark:text-zinc-200'
+                          >
+                            Checkout
+                          </button>
+                        ) : (
+                          "You do not have enough coins to checkout"
+                        )}
                       </div>
                       <div className='mt-6 flex justify-center text-center text-sm text-gray-500'>
                         <p className='dark:text-zinc-400'>

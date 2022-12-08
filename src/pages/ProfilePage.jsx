@@ -2,7 +2,7 @@ import React from "react";
 import { useAuth } from "../Hooks/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import CartNftCart from "../components/CartNftCart";
 export default function ProfilePage(props) {
   const { saveButton, setSaveButton } = props;
   const [avatar, setAvatar] = useState("");
@@ -35,7 +35,7 @@ export default function ProfilePage(props) {
       auth.setShouldRefresh(true);
     }
   };
-
+  console.log(auth.userCartHistory);
   return (
     <div className='flex-1 xl:overflow-y-auto'>
       <div className='mx-auto max-w-3xl py-10 px-4 sm:px-6 lg:py-12 lg:px-8'>
@@ -122,7 +122,10 @@ export default function ProfilePage(props) {
               <br />
               <div className='sm:col-span-6'>
                 <h2 className='text-xl font-medium text-blue-gray-900'>
-                  Space for User Cart History {auth.userCartHistory}
+                  Space for User Cart History{" "}
+                  {auth.userCartHistory.map((order) => {
+                    return order.purchaseDate + order.total;
+                  })}
                 </h2>
               </div>
             </div>

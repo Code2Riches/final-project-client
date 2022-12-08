@@ -2,7 +2,6 @@ import React from "react";
 import { useAuth } from "../Hooks/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CartNftCart from "../components/CartNftCart";
 export default function ProfilePage(props) {
   const { saveButton, setSaveButton } = props;
   const [avatar, setAvatar] = useState("");

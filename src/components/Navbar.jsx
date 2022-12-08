@@ -64,7 +64,7 @@ const Navbar = (props) => {
               <div onClick={()=>{
                 navigate("/profile")
               }}>
-                  <img className="w-9 rounded-full mt-5 mr-5" src={auth.userAvatar} alt="CB" />
+                  <img className="w-9 rounded-full mt-5 mr-5" src={auth.userAvatar} alt="Greyson" />
               </div>
                 <div>
                 <button

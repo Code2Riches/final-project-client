@@ -31,7 +31,7 @@ function HomePage(props) {
   return (
     <div
       name='home'
-      className='w-full h-screen bg-zinc-200 dark:bg-zinc-700 flex flex-col justify-between pt-20'
+      className='w-full bg-zinc-200 dark:bg-zinc-700 flex flex-col justify-between pt-20'
     >
       <div className='grid md:grid-cols max-w-[1240px] m-auto'>
         <div className=' flex flex-col justify-center items-center w-full px-2 py-8'>

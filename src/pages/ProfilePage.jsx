@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth } from "../Hooks/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Fragment } from "react";
@@ -37,7 +38,7 @@ export default function ProfilePage(props) {
       auth.setShouldRefresh(true);
     }
   };
-
+  console.log(auth.userCartHistory);
   return (
     <div className="flex-1 xl:overflow-y-auto">
       <div className="mx-auto max-w-3xl py-12 px-4 sm:px-6 lg:py-12 lg:px-8">
@@ -192,7 +193,7 @@ export default function ProfilePage(props) {
                 alt="User Avatar"
               />
               </div>
-              
+
           </div>
           <br />
         </div>

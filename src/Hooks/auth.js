@@ -143,6 +143,7 @@ export const AuthProvider = ({ children }) => {
       userFirstName,
       userLastName,
       userAvatar,
+      
     ]
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

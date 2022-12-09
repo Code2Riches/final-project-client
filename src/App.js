@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Support from "./pages/ContactPage";
 import ErrorPage from "./pages/ErrorPage";
 import ProfilePage from "./pages/ProfilePage";
+import { useAuth } from "./contexts/AuthContext";
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
   const [theme, setTheme] = useState("light");
   const [sideBar, setSideBar] = useState(false);
   const [signUpButton, setSignUpButton] = useState(false);
+  const auth = useAuth();
   const showLeftSideBar = () => setLeftSideBar(!leftSideBar);
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -85,7 +87,6 @@ const App = () => {
           path: "/profile",
 
           element: <ProfilePage urlEndPoint={urlEndPoint} />,
-
         },
       ],
     },
@@ -105,7 +106,7 @@ const App = () => {
       setNfts(fetchedNftPayload.result);
     };
     fetchNfts();
-  }, []);
+  }, [auth.userCartHistory]);
 
   return (
     <>

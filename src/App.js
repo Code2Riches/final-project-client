@@ -10,7 +10,7 @@ import Login from "./pages/Login";
 import Support from "./pages/ContactPage";
 import ErrorPage from "./pages/ErrorPage";
 import ProfilePage from "./pages/ProfilePage";
-import { useAuth } from "./contexts/AuthContext";
+import { useAuth } from "./Hooks/auth";
 const urlEndPoint = process.env.REACT_APP_URL_ENDPOINT;
 
 const App = () => {

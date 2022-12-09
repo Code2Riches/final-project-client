@@ -191,12 +191,12 @@ export default function ProfilePage(props) {
                 className="inline-block h-120 w-120 rounded-md"
                 src={auth.userAvatar}
                 alt="User Avatar"
+
               />
               </div>
 
           </div>
-          <br />
-        </div>
+        </form>
       </div>
     </div>
   );

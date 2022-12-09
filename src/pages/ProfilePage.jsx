@@ -2,6 +2,11 @@ import React from "react";
 import { useAuth } from "../Hooks/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { Popover, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Fragment } from "react";
+
 export default function ProfilePage(props) {
   const { saveButton, setSaveButton } = props;
   const [avatar, setAvatar] = useState("");

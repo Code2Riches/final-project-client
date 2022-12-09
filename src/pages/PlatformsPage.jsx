@@ -29,6 +29,14 @@ const PlatformsPage = (props) => {
       uniqueCollection.push(collectionName);
     }
   });
+  const nftOwner = [];
+  nfts.forEach((nft) => {
+    const owner = nft.owner;
+    if (owner !== null){
+      nftOwner.push(owner);
+    }
+  });
+
 
   useEffect(() => {
     if (collection) {
@@ -95,13 +103,33 @@ const PlatformsPage = (props) => {
               </select>
             </li>
             <li className='text-2xl py-8'>
-              <a href='#gallery'>Gallery</a>
+              <select
+                className='text-black'
+              >
+                <option value={""}>Sort by Owner</option>
+                {nftOwner.map((owner, index) => {
+                  return (
+                    <option key={index} value={owner}>
+                      {owner}
+                    </option>
+                  );
+                }
+                )}
+              </select>
             </li>
             <li className='text-2xl py-8'>
-              <a href='#deals'>Deals</a>
+            <select
+                className='text-black'
+              >
+                <option value={""}>Sort by Trait</option>
+              </select>
             </li>
             <li className='text-2xl py-8'>
-              <a href='#contact'>Contact</a>
+            <select
+                className='text-black'
+              >
+                <option value={""}>Number on Page</option>
+              </select>
             </li>
           </ul>
         </div>

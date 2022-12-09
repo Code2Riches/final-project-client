@@ -32,7 +32,9 @@ const PlatformsPage = (props) => {
   const nftOwner = [];
   nfts.forEach((nft) => {
     const owner = nft.owner;
-    if (owner !== null){
+    if (owner === null){
+      console.log('owner is null');
+    } else {
       nftOwner.push(owner);
     }
   });

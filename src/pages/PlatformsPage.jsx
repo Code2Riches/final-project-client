@@ -70,7 +70,7 @@ const PlatformsPage = (props) => {
           }
         >
           <FaArrowAltCircleLeft
-            className='h-8 w-8 cursor-pointer absolute top-0 right-0 mt-4 mr-4 ransition ease-in duration-100 hover:-translate-x-3'
+            className='h-8 w-8 cursor-pointer absolute top-0 right-0 mt-4 mr-4 transition ease-in duration-100 hover:-translate-x-3'
             onClick={() => {
               showLeftSideBar();
             }}

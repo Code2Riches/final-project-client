@@ -10,8 +10,6 @@ import {
 } from "@heroicons/react/24/outline";
 import { FaBars } from "react-icons/fa";
 
-
-
 const Navbar = (props) => {
   const navigate = useNavigate();
   const { sideBar, setSideBar, handleThemeSwitch, setSignUpButton } = props;
@@ -20,7 +18,7 @@ const Navbar = (props) => {
   const showSidebar = () => setSideBar(!sideBar);
 
   const auth = useAuth();
- 
+
   return (
     <div className='w-screen h-[80px] z-10 bg-zinc-200 dark:bg-zinc-600 top-0  fixed drop-shadow-lg'>
       <div className=' px-2 flex justify-between items-center w-full h-full'>
@@ -58,25 +56,31 @@ const Navbar = (props) => {
               <ShoppingCartIcon className='w-8 rounded-full' />
             </button>
           </div>
-            
+
           {auth.userEmail ? (
             <div className='flex'>
-              <div onClick={()=>{
-                navigate("/profile")
-              }}>
-                  <img className="w-9 rounded-full mt-5 mr-5" src={auth.userAvatar} alt="Greyson" />
+              <div
+                onClick={() => {
+                  navigate("/profile");
+                }}
+              >
+                <img
+                  className='w-9 rounded-full mt-5 mr-5'
+                  src={auth.userAvatar}
+                  alt='Greyson'
+                />
               </div>
-                <div>
+              <div>
                 <button
                   className='px-6 py-2 my-4 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
                   onClick={() => {
                     auth.logout();
-                    navigate("/home")
+                    navigate("/home");
                   }}
                 >
                   Log Out
                 </button>
-                </div>
+              </div>
             </div>
           ) : (
             <div className='flex'>
@@ -174,15 +178,29 @@ const Navbar = (props) => {
           </Link>
         </li>
         <div className='flex flex-col my-4'>
-          <div
-            className=''
-            onClick={() => {
-              showSidebar();
-            }}
-          >
-            <button className=' rounded-full w-6 h-6 focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3 dark:bg-indigo-700/50'>
+          <div className='flex justify-between'>
+            <button
+              className=' rounded-full w-6 h-6 focus:outline-none focus:ring-2 focus:ring-black mr-4 mt-3 dark:bg-indigo-700/50'
+              onClick={() => {
+                showSidebar();
+              }}
+            >
               <ShoppingCartIcon className='w-5 pl-1' />
             </button>
+            {auth.userEmail ? (
+              <div
+                onClick={() => {
+                  setNav(!nav);
+                  navigate("/profile");
+                }}
+              >
+                <img
+                  className='w-6 rounded-full mt-3'
+                  src={auth.userAvatar}
+                  alt='Greyson'
+                />
+              </div>
+            ) : null}
           </div>
 
           <button

@@ -5,7 +5,7 @@ import mutantSoda from "../assets/mutant-soda.png";
 
 const Support = () => {
   return (
-    <div name='support' className='w-full my-18'>
+    <div name='support' className='w-full mt-16 pb-12'>
       <div className='w-full h-[700px] bg-gray-900/90 absolute '>
         <img
           src={mutantSoda}

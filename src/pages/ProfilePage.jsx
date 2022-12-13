@@ -105,6 +105,9 @@ export default function ProfilePage(props) {
                                 className='mt-4 block w-full rounded-md border-blue-gray-800 text-blue-gray-900 shadow-xl'
                                 type='text'
                                 onChange={(e) => {
+                                  if(setFirstName('')) {
+                                    setFirstName('');
+                                  }
                                   setFirstName(e.target.value);
                                 }}
                               />
@@ -119,6 +122,9 @@ export default function ProfilePage(props) {
                                 className='mt-4 block w-full rounded-md border-blue-gray-900 text-blue-gray-900 shadow-xl'
                                 type='text'
                                 onChange={(e) => {
+                                  if(setLastName('')) {
+                                    setLastName('');
+                                  }
                                   setLastName(e.target.value);
                                 }}
                               />
@@ -134,6 +140,9 @@ export default function ProfilePage(props) {
                                 type='url'
                                 placeholder=' Url Here'
                                 onChange={(e) => {
+                                  if(setAvatar('')) {
+                                    setAvatar('');
+                                  }
                                   setAvatar(e.target.value);
                                 }}
                               />

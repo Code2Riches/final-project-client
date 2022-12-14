@@ -5,7 +5,7 @@ import mutantSoda from "../assets/mutant-soda.png";
 
 const Support = () => {
   return (
-    <div name='support' className='w-full my-18'>
+    <div name='support' className='w-full mt-16 pb-12'>
       <div className='w-full h-[700px] bg-gray-900/90 absolute '>
         <img
           src={mutantSoda}
@@ -38,13 +38,13 @@ const Support = () => {
                 accusantium?
               </p>
             </div>
-            <div className='bg-slate-100 dark:bg-zinc-900 pl-8 py-4'>
-              <p className=' flex items-center text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
+            <div className='bg-slate-100 dark:bg-zinc-900 pl-8 py-4 sticky top-[100vh] rounded-xl'>
+              <p className=' flex items-center text-indigo-600 dark:text-white dark:hover:text-indigo-400 '>
                 Contact Us <ArrowSmallRightIcon className='w-5 ml-2' />
               </p>
             </div>
           </div>
-          <div className='bg-white dark:bg-zinc-700  rounded-xl shadow-2xl'>
+          <div className='bg-white dark:bg-zinc-700 rounded-xl shadow-2xl'>
             <div className='p-8'>
               <UserGroupIcon className='w-16 p-4 bg-indigo-600 text-white rounded-lg mt-[-4rem]' />
               <h3 className='font-bold text-2xl my-6 dark:text-gray-300'>Technical Support</h3>
@@ -54,7 +54,7 @@ const Support = () => {
                 accusantium?
               </p>
             </div>
-            <div className='bg-slate-100 dark:bg-zinc-900 pl-8 py-4'>
+            <div className='bg-slate-100 dark:bg-zinc-900 pl-8 py-4 sticky top-[100vh] rounded-xl'>
               <p className=' flex items-center text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
                 Contact Us <ArrowSmallRightIcon className='w-5 ml-2' />
               </p>
@@ -70,7 +70,7 @@ const Support = () => {
                 accusantium?
               </p>
             </div>
-            <div className='bg-slate-100 dark:bg-zinc-900 pl-8 py-4'>
+            <div className='bg-slate-100 dark:bg-zinc-900 pl-8 py-4 sticky top-[100vh] rounded-xl'>
               <p className=' flex items-center text-indigo-600 dark:text-white dark:hover:text-indigo-400'>
                 Contact Us <ArrowSmallRightIcon className='w-5 ml-2' />
               </p>

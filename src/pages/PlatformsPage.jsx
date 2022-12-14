@@ -4,6 +4,7 @@ import { useAuth } from "../Hooks/auth";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import xtype from 'xtypejs'
 
 const PlatformsPage = (props) => {
   const {
@@ -17,6 +18,7 @@ const PlatformsPage = (props) => {
   const [successMessage, setSuccessMessage] = useState("");
   const params = useParams();
   const [collection, setCollection] = useState(params.collection || "");
+  const [ownerCollection, setOwnerCollection] = useState(params.collection || "");
   const [collectionNfts, setCollectionNfts] = useState(nfts);
   const uniqueCollection = [];
   nfts.forEach((nft) => {
@@ -29,15 +31,24 @@ const PlatformsPage = (props) => {
       uniqueCollection.push(collectionName);
     }
   });
-  const nftOwner = [];
+
+  const nftUniqueOwnerRaw = [];
   nfts.forEach((nft) => {
-    const owner = nft.owner;
-    if (owner === null){
-      console.log('owner is null');
-    } else {
-      nftOwner.push(owner);
+    const ownerRaw = nft.owner;
+    console.log(ownerRaw);
+    const isInNftOwner = nftUniqueOwnerRaw.includes(ownerRaw);
+    if (!isInNftOwner){
+      nftUniqueOwnerRaw.push(ownerRaw);
     }
   });
+  const nftUniqueOwnerFilter = nftUniqueOwnerRaw.filter((item) => item !== undefined);
+  const nftUniqueOwner = [];
+  nftUniqueOwnerFilter.forEach((owner) => {
+    const ownerName = owner.split('@')[0];
+    console.log(ownerName);
+    nftUniqueOwner.push(ownerName);
+  });
+  console.log(nftUniqueOwner);
 
 
   useEffect(() => {
@@ -54,8 +65,22 @@ const PlatformsPage = (props) => {
     }
   }, [collection]);
 
+  useEffect(() => {
+    if (ownerCollection) {
+      const fetchOwnerCollection = async () => {
+        const response = await fetch(
+          `${urlEndPoint}/nfts/get-collection/${ownerCollection}`
+        );
+
+        const payload = await response.json();
+        setCollectionNfts(payload.result);
+      };
+      fetchOwnerCollection();
+    }
+  }, [ownerCollection]);
+
   return (
-    <div name='platforms' className='w-full my-16 pt-24'>
+    <div name='platforms' className='w-full my-16 pt-20'>
       <div
         onClick={() => {
           showLeftSideBar();
@@ -86,15 +111,15 @@ const PlatformsPage = (props) => {
             }}
           />
           <ul className='h-full w-full text-center pt-12'>
-            <li className='text-2xl py-8'>
+            <li className='text-xl py-8 '>
               <select
-                className='text-black'
+                className='text-black '
                 value={collection}
                 onChange={(e) => {
                   setCollection(e.target.value);
                 }}
               >
-                <option value={""}>Select Collection</option>
+                <option className="" value={""}>Select Collection</option>
                 {uniqueCollection.map((collectionName, index) => {
                   return (
                     <option key={index} value={collectionName}>
@@ -104,12 +129,16 @@ const PlatformsPage = (props) => {
                 })}
               </select>
             </li>
-            <li className='text-2xl py-8'>
+            <li className='text-xl py-8'>
               <select
                 className='text-black'
+                value={ownerCollection}
+                onChange={(e) => {
+                  setOwnerCollection(e.target.value);
+                }}
               >
                 <option value={""}>Sort by Owner</option>
-                {nftOwner.map((owner, index) => {
+                {nftUniqueOwner.map((owner, index) => {
                   return (
                     <option key={index} value={owner}>
                       {owner}
@@ -117,20 +146,6 @@ const PlatformsPage = (props) => {
                   );
                 }
                 )}
-              </select>
-            </li>
-            <li className='text-2xl py-8'>
-            <select
-                className='text-black'
-              >
-                <option value={""}>Sort by Trait</option>
-              </select>
-            </li>
-            <li className='text-2xl py-8'>
-            <select
-                className='text-black'
-              >
-                <option value={""}>Number on Page</option>
               </select>
             </li>
           </ul>

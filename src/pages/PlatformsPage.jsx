@@ -80,7 +80,7 @@ const PlatformsPage = (props) => {
   }, [ownerCollection]);
 
   return (
-    <div name='platforms' className='w-full my-16 pt-20'>
+    <div name='platforms' className='w-full mt-16 pt-20 pb-20'>
       <div
         onClick={() => {
           showLeftSideBar();

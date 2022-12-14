@@ -153,7 +153,7 @@ const PlatformsPage = (props) => {
         <h2 className='text-5xl font-bold text-center dark:text-white'>
           All-In-One Platform
         </h2>
-        <p className='text-2xl py-8 text-gray-500 text-center'>
+        <p className='text-2xl py-8 text-gray-500 dark:text-gray-300 text-center'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint laborum
           accusantium iure ab vitae itaque nihil sed! Eum, optio fuga.
         </p>

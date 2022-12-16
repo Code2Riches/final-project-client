@@ -18,8 +18,9 @@ const PlatformsPage = (props) => {
   const [successMessage, setSuccessMessage] = useState("");
   const params = useParams();
   const [collection, setCollection] = useState(params.collection || "");
-  const [ownerCollection, setOwnerCollection] = useState(params.collection || "");
+  const [ownerCollection, setOwnerCollection] = useState(params.owner || "");
   const [collectionNfts, setCollectionNfts] = useState(nfts);
+  const [ownerCollectionNfts, setOwnerCollectionNfts] = useState(nfts);
   const uniqueCollection = [];
   nfts.forEach((nft) => {
     //get collection name from nft
@@ -42,13 +43,13 @@ const PlatformsPage = (props) => {
     }
   });
   const nftUniqueOwnerFilter = nftUniqueOwnerRaw.filter((item) => item !== undefined);
-  const nftUniqueOwner = [];
-  nftUniqueOwnerFilter.forEach((owner) => {
-    const ownerName = owner.split('@')[0];
-    console.log(ownerName);
-    nftUniqueOwner.push(ownerName);
-  });
-  console.log(nftUniqueOwner);
+  // const nftUniqueOwner = [];
+  // nftUniqueOwnerFilter.forEach((owner) => {
+  //   const ownerName = owner.split('@')[0];
+  //   console.log(ownerName);
+  //   nftUniqueOwner.push(ownerName);
+  // });
+  console.log("nftUniqueOwnerFilter ", nftUniqueOwnerFilter);
 
 
   useEffect(() => {
@@ -59,6 +60,7 @@ const PlatformsPage = (props) => {
         );
 
         const payload = await response.json();
+        console.log("nftPayload ", payload);
         setCollectionNfts(payload.result);
       };
       fetchCollection();
@@ -69,10 +71,12 @@ const PlatformsPage = (props) => {
     if (ownerCollection) {
       const fetchOwnerCollection = async () => {
         const response = await fetch(
-          `${urlEndPoint}/nfts/get-collection/${ownerCollection}`
+          `${urlEndPoint}/nfts/get-owner/${ownerCollection}`
         );
 
         const payload = await response.json();
+        console.log("nftPayload ", payload);
+        // setOwnerCollectionNfts(payload.result);
         setCollectionNfts(payload.result);
       };
       fetchOwnerCollection();
@@ -138,7 +142,7 @@ const PlatformsPage = (props) => {
                 }}
               >
                 <option value={""}>Sort by Owner</option>
-                {nftUniqueOwner.map((owner, index) => {
+                {nftUniqueOwnerFilter.map((owner, index) => {
                   return (
                     <option key={index} value={owner}>
                       {owner}

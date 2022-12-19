@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Fragment, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
@@ -11,6 +10,7 @@ export default function CartPage(props) {
   const [doesUserHaveEnough, setDoesUserHaveEnough] = useState(false);
   const [balance, setBalance] = useState(0);
   const auth = useAuth();
+  
   const removeFromCart = async (pickedNft) => {
     const result = await fetch(`${urlEndPoint}/users/delete-cart-item`, {
       method: "PUT",

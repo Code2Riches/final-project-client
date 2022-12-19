@@ -49,6 +49,10 @@ const Navbar = (props) => {
             </div>
             <button
               className='w-9 h-9 my-auto rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-6 dark:bg-indigo-700/50'
+
+           
+              
+
               onClick={() => {
                 showSidebar();
               }}
@@ -56,7 +60,6 @@ const Navbar = (props) => {
               <ShoppingCartIcon className='w-8 rounded-full' />
             </button>
           </div>
-
           {auth.userEmail ? (
             <div className='flex'>
               <div

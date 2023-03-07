@@ -36,7 +36,6 @@ const PlatformsPage = (props) => {
   const nftUniqueOwnerRaw = [];
   nfts.forEach((nft) => {
     const ownerRaw = nft.owner;
-    console.log(ownerRaw);
     const isInNftOwner = nftUniqueOwnerRaw.includes(ownerRaw);
     if (!isInNftOwner){
       nftUniqueOwnerRaw.push(ownerRaw);

@@ -23,7 +23,7 @@ const NftCard = (props) => {
       });
       const payload = await result.json();
       if (payload) {
-        auth.setShouldRefresh(true);
+        // auth.setShouldRefresh(true);
       }
     }
   };

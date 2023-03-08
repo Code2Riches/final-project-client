@@ -43,7 +43,7 @@ export default function CartPage(props) {
   }, [auth.userCart]);
 
   const checkout = async () => {
-    auth.setShouldRefresh(false);
+    // auth.setShouldRefresh(false);
     const idsArray = auth.userCart.map((item) => item._id);
     const result = await fetch(`${urlEndPoint}/users/checkout`, {
       method: "PUT",
@@ -60,7 +60,7 @@ export default function CartPage(props) {
     });
     const payload = await result.json();
     if (payload) {
-      auth.setShouldRefresh(true);
+      // auth.setShouldRefresh(true);
     }
   };
 

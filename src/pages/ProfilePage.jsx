@@ -56,7 +56,7 @@ export default function ProfilePage(props) {
   console.log(myOwnedNfts);
   console.log(auth.userCartHistory);
   return (
-    <div className='flex-1 xl:overflow-y-auto'>
+    <div className='flex-1 xl:overflow-y-auto h-screen'>
       <div className='mx-auto max-w-3xl py-12 px-4 sm:px-6 lg:py-12 lg:px-8'>
         {/* <div className="sm:col-span-6 mt-12 ">
           <h1 className="text-xl text-blue-gray-900 font-bold my-4">
@@ -105,8 +105,8 @@ export default function ProfilePage(props) {
                                 className='mt-4 block w-full rounded-md border-blue-gray-800 text-blue-gray-900 shadow-xl'
                                 type='text'
                                 onChange={(e) => {
-                                  if(setFirstName('')) {
-                                    setFirstName('');
+                                  if (setFirstName("")) {
+                                    setFirstName("");
                                   }
                                   setFirstName(e.target.value);
                                 }}
@@ -122,8 +122,8 @@ export default function ProfilePage(props) {
                                 className='mt-4 block w-full rounded-md border-blue-gray-900 text-blue-gray-900 shadow-xl'
                                 type='text'
                                 onChange={(e) => {
-                                  if(setLastName('')) {
-                                    setLastName('');
+                                  if (setLastName("")) {
+                                    setLastName("");
                                   }
                                   setLastName(e.target.value);
                                 }}
@@ -140,8 +140,8 @@ export default function ProfilePage(props) {
                                 type='url'
                                 placeholder=' Url Here'
                                 onChange={(e) => {
-                                  if(setAvatar('')) {
-                                    setAvatar('');
+                                  if (setAvatar("")) {
+                                    setAvatar("");
                                   }
                                   setAvatar(e.target.value);
                                 }}

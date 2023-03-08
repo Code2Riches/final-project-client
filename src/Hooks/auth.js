@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          [process.env.REACT_APP_TOKEN_HEADER_KEY]: token,
+          [process.env.REACT_APP_TOKEN_HEADER_KEY]: 'abc',
         },
       });
       const responseJSON = await res.json();

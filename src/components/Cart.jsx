@@ -10,7 +10,7 @@ export default function CartPage(props) {
   const [doesUserHaveEnough, setDoesUserHaveEnough] = useState(false);
   const [balance, setBalance] = useState(0);
   const auth = useAuth();
-  
+
   const removeFromCart = async (pickedNft) => {
     const result = await fetch(`${urlEndPoint}/users/delete-cart-item`, {
       method: "PUT",
@@ -24,7 +24,7 @@ export default function CartPage(props) {
     });
     const payload = await result.json();
     if (payload) {
-      auth.setShouldRefresh(true);
+      // auth.setShouldRefresh(true);
     }
   };
 

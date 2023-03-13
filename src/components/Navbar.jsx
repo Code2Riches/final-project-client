@@ -70,7 +70,7 @@ const Navbar = (props) => {
                 <img
                   className='w-9 rounded-full mt-5 mr-5'
                   src={auth.userAvatar}
-                  alt='Greyson'
+                  alt='CB'
                 />
               </div>
               <div>

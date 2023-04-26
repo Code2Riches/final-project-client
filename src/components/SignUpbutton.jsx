@@ -4,7 +4,7 @@ const SignUpbutton = () => {
 
   return (
     <button
-              className='w-full py-3 mt-8 bg-indigo-600 hover:bg-transparent dark:hover:text-zinc-300 relative text-white rounded-lg'
+              className='w-full py-3 mt-8 bg-gray-600 hover:bg-transparent dark:hover:text-zinc-300 relative text-white rounded-lg'
               onClick={async () => {
                 {signUpButton ? 
                 const registerResult = await auth.register(email, password);

@@ -21,24 +21,24 @@ class Carousel extends Component {
             : this.state.currentSlide + 1;
         this.setState({ currentSlide: newSlide });
       }
-    }, 5000);
+    }, 3000);
   }
 
-  nextSlide = () => {
-    let newSlide =
-      this.state.currentSlide === CarouselData.length - 1
-        ? 0
-        : this.state.currentSlide + 1;
-    this.setState({ currentSlide: newSlide });
-  };
+  // nextSlide = () => {
+  //   let newSlide =
+  //     this.state.currentSlide === CarouselData.length - 1
+  //       ? 0
+  //       : this.state.currentSlide + 1;
+  //   this.setState({ currentSlide: newSlide });
+  // };
 
-  prevSlide = () => {
-    let newSlide =
-      this.state.currentSlide === 0
-        ? CarouselData.length - 1
-        : this.state.currentSlide - 1;
-    this.setState({ currentSlide: newSlide });
-  };
+  // prevSlide = () => {
+  //   let newSlide =
+  //     this.state.currentSlide === 0
+  //       ? CarouselData.length - 1
+  //       : this.state.currentSlide - 1;
+  //   this.setState({ currentSlide: newSlide });
+  // };
 
   setCurrentSlide = (index) => {
     this.setState({ currentSlide: index });
@@ -48,10 +48,10 @@ class Carousel extends Component {
     return (
       <div className="mt-0 pb-20 ">
         <div className=" flex overflow-hidden relative justify-center rounded-xl">
-          <AiOutlineLeft
+          {/* <AiOutlineLeft
             onClick={this.prevSlide}
             className="absolute left-0 text-3xl inset-y-1/2 text-white cursor-pointer dark:text-gray-800"
-          />
+          /> */}
 
           <Swipe onSwipeLeft={this.nextSlide} onSwipeRight={this.prevSlide}>
             {CarouselData.map((slide, index) => {
@@ -62,7 +62,7 @@ class Carousel extends Component {
                   key={index}
                   className={
                     index === this.state.currentSlide
-                      ? "block h-auto object-cover w-[600px]"
+                      ? "block h-[600px] object-cover w-[1000px]"
                       : "hidden"
                   }
                   onMouseEnter={() => {
@@ -82,7 +82,7 @@ class Carousel extends Component {
                 <div
                   className={
                     index === this.state.currentSlide
-                      ? "h-2 w-2 bg-blue-700  dark:bg-indigo-700/50 rounded-full mx-2 mb-2 cursor-pointer"
+                      ? "h-2 w-2 bg-gray-700  dark:bg-gray-200 rounded-full mx-2 mb-2 cursor-pointer"
                       : "h-2 w-2 bg-white dark:bg-gray-800 rounded-full mx-2 mb-2 cursor-pointer"
                   } 
                   key={index}
@@ -94,10 +94,10 @@ class Carousel extends Component {
             })}
           </div>
 
-          <AiOutlineRight
+          {/* <AiOutlineRight
             onClick={this.nextSlide}
             className="absolute right-0 text-3xl inset-y-1/2 text-white  dark:text-gray-800 cursor-pointer"
-          />
+          /> */}
         </div>
       </div>
     );

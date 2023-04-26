@@ -1,22 +1,22 @@
 export const CarouselData = [
   {
     image:
-      "https://i.seadn.io/gae/CrpKo16ArLV_SCLXz9Bp2T4k08Nfana7TzhlrI3Fj7jqO0rUVXvbHi6YK9DhOZI6tQ5N0LR5zGVvOCHw4xhqDdBZV1FFBnDp_G4lPw?w=1000&auto=format",
+      "https://cdn.pixabay.com/photo/2014/10/16/01/50/ferrari-490617__340.jpg",
   },
   {
     image:
-      "https://i.seadn.io/gae/Pj1-41eZseHoX47H_Jf5Wl6uKM0dE8soXjmetLzHnVnpMS4fvDaFTC_eml-w_8AQGuSpHDbYYCa8iwqlhVsDQNS-0NXiArxZrxmQ?auto=format&w=1000",
+      "https://cdn.pixabay.com/photo/2016/03/26/22/32/fast-1281628__480.jpg",
   },
   {
     image:
-      "https://i.seadn.io/gae/ye9cGZANGU2Sh4OPkE9BdosnxAWIyTWUQKjxX-N18rFk8DWz7LEcoUDB3_CfY_CziEMEJNAudOPec8YdXt59NSsDNVYpxKlmfa7U?auto=format&w=1000",
+      "https://cdn.pixabay.com/photo/2016/12/14/15/26/f1-1906649__480.jpg",
   },
   {
     image:
-      "https://i.seadn.io/gae/dzVsD0OFjd5m_tr8MTdEme34nWH8BKWAebhQTQ17ReyNxPxo56bni_u5EXWiI7Bh3pX52u2opV3V5boxAa4u-eZsyWDT9Z8-dQMP?auto=format&w=1000",
+      "https://cdn.pixabay.com/photo/2021/09/18/00/15/max-verstappen-6633948__480.jpg",
   },
   {
     image:
-      "https://i.seadn.io/gae/iIvKW0UYb936s609DXHWZnPeRfvqIoTgQJ6t8y5LlVebj4iVSulZrCz5eNFgrYjmWnEutWaGNeKUx8B9LvoNFdkpIPzwy1_nW7luVQ?auto=format&w=1000",
+      "https://cdn.pixabay.com/photo/2019/08/21/08/13/racing-car-4420497__480.jpg",
   },
 ];

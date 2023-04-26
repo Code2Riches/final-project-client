@@ -16,39 +16,41 @@ const Navbar = (props) => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   const showSidebar = () => setSideBar(!sideBar);
-
   const auth = useAuth();
 
   return (
-    <div className='w-screen h-[80px] z-10 bg-zinc-200 dark:bg-zinc-600 top-0  fixed drop-shadow-lg'>
+    <div className='w-screen h-[80px] z-10 bg-zinc-100 dark:bg-zinc-600 top-0  fixed drop-shadow-lg'>
       <div className=' px-2 flex justify-between items-center w-full h-full'>
         <div className='flex items-center'>
+
+          {/* Should Logo bve placed b4 or after site name? */}
+
           <h1 className=' text-3xl font-bold mr-4 sm:text-4xl dark:text-white'>
-            N3XTzION.
+            GP Posters
           </h1>
           <ul className='hidden md:flex'>
-            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400 cursor-pointer'>
+            <li className='hover:text-text-red-900 dark:text-white dark:hover:text-indigo-400 cursor-pointer'>
               <Link to='/home'>Home</Link>
             </li>
-            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400 cursor-pointer'>
+            <li className='hover:text-red-900 dark:text-white dark:hover:text-red-900 cursor-pointer'>
+              <Link to='/platforms'>Photos</Link>
+            </li>
+            <li className='hover:text-text-red-900 dark:text-white dark:hover:text-indigo-400 cursor-pointer'>
               <Link to='/about'>About</Link>
             </li>
-            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400 cursor-pointer'>
+            <li className=' hover:text-text-red-900 dark:text-white dark:hover:text-indigo-400 cursor-pointer'>
               <Link to='/support'>Support</Link>
-            </li>
-            <li className='hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400 cursor-pointer'>
-              <Link to='/platforms'>Platforms</Link>
             </li>
           </ul>
         </div>
         <div className=' hidden md:flex pr-4'>
           <div className='flex gap-5'>
             <div className=' my-auto flex '>
-              <p className='dark:text-zinc-300 text-black pr-2'>Light/Dark</p>
+              <p className='dark:text-zinc-200 text-black pr-2'>Light/Dark</p>
               <ToggleButton handleThemeSwitch={handleThemeSwitch} />
             </div>
             <button
-              className='w-9 h-9 my-auto rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-6 dark:bg-indigo-700/50'
+              className='w-9 h-9 my-auto rounded-full focus:outline-none focus:ring-2 focus:ring-black mr-6 dark:bg-zinc-800'
 
            
               

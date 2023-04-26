@@ -42,8 +42,16 @@ const App = () => {
       ),
       errorElement: <ErrorPage />,
       children: [
+        // {
+        //   element: <LandingPage urlEndPoint={urlEndPoint} />,
+        //   index: true,
+        // },
+        // {
+        //   path: "/home",
+        //   element: <HomePage urlEndPoint={urlEndPoint} />,
+        // },
         {
-          element: <LandingPage urlEndPoint={urlEndPoint} />,
+          element: <HomePage urlEndPoint={urlEndPoint} />,
           index: true,
         },
         {

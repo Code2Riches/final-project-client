@@ -38,7 +38,7 @@ const Footer = () => {
       </div>
 
       <div className=' flex flex-col max-w-[1240px] px-0 pt-0 mx-auto justify-between text-center text-gray-500 dark:text-white'>
-        <p className='py-4'>2022 N3XTzION. LLC All rights reserved</p>
+        <p className='py-4'>2022 GP Posters</p>
         
       </div>
     </div>

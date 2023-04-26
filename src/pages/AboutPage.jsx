@@ -1,7 +1,5 @@
 import React from "react";
 import Bull from "../assets/dadbod-centaur.jpg"
-import Llama from "../assets/ClayStealth.png"
-import Wolf from "../assets/bstop.png"
 
 import {
   FaGithub,
@@ -10,29 +8,11 @@ import {
 } from "react-icons/fa";
 
 const people = [
-  {
-    name: '@ClaytonStealth',
-    role: '#BALLER',
-    imageURL: Llama,
-    bio: 'He came in like a WRECKING BALL.... #%$@!',
-    githubURL: 'https://github.com/ClaytonStealth',
-    twitterUrl: 'https://twitter.com/Stea1thNFT',
-    linkedinUrl: 'https://www.linkedin.com/in/clayton-sestak/',
-  },
-  {
-    name: '@BrennanStopnik',
-    role: '#BALLER',
-    imageURL: Wolf,
-    bio: 'To Be, or NOT to be...!?',
-    githubURL: 'https://github.com/BrennanStopnik',
-    twitterUrl: '#',
-    linkedinUrl: 'https://www.linkedin.com/in/brennan-stopnik/',
-  },
  {
     name: '@Code2Riches',
     role: '#HODLER',
     imageURL: Bull,
-    bio: 'CB talks a big game. He can easily get under your skin, if its soft... Nice guy overall!',
+    bio: 'CB is a nice guy overall!',
     githubURL: 'https://github.com/Code2Riches',
     linkedinUrl: 'https://linkedin.com/in/christianbenites',
     twitterUrl: 'https://twitter.com/Chris_Benites',
@@ -47,7 +27,7 @@ export default function AboutPage() {
           <div className="pt-8 sm:pt-0 space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
             <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-gray-300 sm:text-4xl">Dream Team</h2>
             <p className="text-xl text-zinc-800 dark:text-gray-300">
-              We Get It Done!
+             I Get It Done!
             </p>
           </div>
 

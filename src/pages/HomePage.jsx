@@ -30,29 +30,31 @@ function HomePage(props) {
   }, [auth.userToken]);
   return (
     <div
-      name='home'
-      className='w-full bg-zinc-200 dark:bg-zinc-700 flex flex-col justify-between pt-20 mt-8'
+      name="home"
+      className="w-full bg-zinc-100 dark:bg-zinc-800 flex flex-col justify-between pt-20 mt-8"
     >
-      <div className='grid md:grid-cols max-w-[1240px] m-auto'>
-        <div className=' flex flex-col justify-center items-center w-full px-2 py-8'>
-          <p className='text-2xl dark:text-gray-300 justify-center'>
-            N3XTzION. Marketplace
+      <div className="grid md:grid-cols max-w-[1240px] m-auto">
+        <div className=" flex flex-col justify-center items-center w-full px-2 py-8">
+          <p className="text-2xl dark:text-gray-300 justify-center">
+            Welcome to
           </p>
-          <h1 className='py-3 text 5xl md:text-7xl font-bold dark:text-gray-300'>
-            NFT Market
+          <h1 className="py-3 text 5xl md:text-7xl font-bold dark:text-gray-300">
+            GP Posters
           </h1>
-          <p className='text-2xl dark:text-gray-300'>This is our MarketPlace</p>
+          <p className="text-2xl dark:text-gray-300">
+            Where you'll find all of your best GP memories!
+          </p>
           <button
-            className='py-3 px-6 sm:w-[60%] my-4 dark:hover:text-indigo-400 dark:bg-indigo-700/50'
+            className="py-3 px-6 sm:w-[60%] my-4 dark:hover text-zinc-100 dark:bg-zinc-700/50"
             onClick={() => {
-              navigate("/platforms");
+              navigate("/platforms"); // Will navigate to photos page for options*
             }}
           >
-            Get Started
+            Search for your favorite GP 
           </button>
         </div>
       </div>
-      <div className='grid justify-center'>
+      <div className="grid justify-center">
         <Carousel />
       </div>
       {/* <div className='absolute flex flex-col py-0 md:min-w-[560px] bottom-[5%] mx-0 md:left transform md:translate-x-1/4 bg-zinc-200 dark:bg-zinc-800 border border-slate-300 rounded-xl text-center shadow-xl'>

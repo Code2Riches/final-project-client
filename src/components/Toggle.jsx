@@ -17,8 +17,8 @@ export default function ToggleButton(props) {
         handleThemeSwitch();
       }}
       className={classNames(
-        enabled ? "bg-indigo-600 dark:bg-indigo-700/50" : "bg-gray-200",
-        "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        enabled ? "bg-zinc-800 dark:bg-zinc-800" : "bg-gray-200",
+        "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-1"
       )}
     >
       <span className='sr-only'>Use setting</span>
@@ -61,7 +61,7 @@ export default function ToggleButton(props) {
           aria-hidden='true'
         >
           <svg
-            className='h-3 w-3 text-indigo-600'
+            className='h-3 w-3 text-gray-600'
             fill='currentColor'
             viewBox='0 0 12 12'
           >

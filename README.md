@@ -1,5 +1,5 @@
--Landing page- BS
--NavBar- CS i guess
+-Landing page- CB
+-NavBar- CB i guess
 -HomePage-
 -shopping cart
 -contact page
